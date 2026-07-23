@@ -845,7 +845,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cd9d2514ad12824ab24c0d0821d427d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimerManager
-  startingTime: 20
+  startingTime: 12
   drainRate: 1
 --- !u!4 &1085067965
 Transform:
