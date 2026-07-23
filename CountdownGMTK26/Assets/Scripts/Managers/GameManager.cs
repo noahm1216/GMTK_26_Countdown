@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TimerManager timer;
     [SerializeField] private DeckManager deck;
     [SerializeField] private HandUI handUI;
+    [SerializeField] private ScoreManager scoreManager;
 
     private void Awake()
     {
@@ -17,6 +18,8 @@ public class GameManager : MonoBehaviour
         deck.BuildDeck();
 
         handUI.Refresh();
+        
+        scoreManager.StartScore();
     }
 
     private void OnDestroy()
@@ -47,7 +50,9 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
-        Debug.Log("Game Over!");
+        scoreManager.StopScore();
+
+        Debug.Log($"Final Score: {scoreManager.CurrentScore}");
 
         // TODO:
         // Disable card input
