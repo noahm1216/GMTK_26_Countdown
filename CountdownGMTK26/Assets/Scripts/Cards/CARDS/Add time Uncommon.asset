@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e6a3b5ed4c939c4b9c80a85727dcc33, type: 3}
   m_Name: Add time Uncommon
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardName: Add time (Uncommon)
+  cardName: Add time
   description: 'Adds 4 seconds to countdown '
   artwork: {fileID: 0}
   effect: 0

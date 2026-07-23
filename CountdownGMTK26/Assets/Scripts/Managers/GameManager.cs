@@ -2,13 +2,26 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("Managers")]
     [SerializeField] private TimerManager timer;
     [SerializeField] private DeckManager deck;
     [SerializeField] private HandUI handUI;
 
+    private void Awake()
+    {
+        timer.OnGameOver += GameOver;
+    }
+
     private void Start()
     {
+        deck.BuildDeck();
+
         handUI.Refresh();
+    }
+
+    private void OnDestroy()
+    {
+        timer.OnGameOver -= GameOver;
     }
 
     public void PlayCard(CardInstance card)
@@ -20,18 +33,25 @@ public class GameManager : MonoBehaviour
         handUI.Refresh();
     }
 
-    private void Awake()
+    public void PlayerRefillHand()
     {
-        timer.OnGameOver += GameOver;
-    }
+        if (!deck.CanRefill)
+            return;
 
-    private void OnDestroy()
-    {
-        timer.OnGameOver -= GameOver;
+        deck.ReturnRemainingHandToDrawPile();
+
+        deck.DrawHand();
+
+        handUI.Refresh();
     }
 
     private void GameOver()
     {
         Debug.Log("Game Over!");
+
+        // TODO:
+        // Disable card input
+        // Show Game Over UI
+        // Save High Score
     }
 }

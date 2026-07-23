@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e6a3b5ed4c939c4b9c80a85727dcc33, type: 3}
   m_Name: Divide time Basic
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardName: Divide time (Basic)
+  cardName: Divide time
   description: Divides coutndown by 1.5
   artwork: {fileID: 0}
   effect: 3

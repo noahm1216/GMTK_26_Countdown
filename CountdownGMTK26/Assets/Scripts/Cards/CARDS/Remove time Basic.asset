@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e6a3b5ed4c939c4b9c80a85727dcc33, type: 3}
   m_Name: Remove time Basic
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardName: Remove time (Basic)
+  cardName: Remove time
   description: Removes 1 second from countdown
   artwork: {fileID: 0}
   effect: 1
