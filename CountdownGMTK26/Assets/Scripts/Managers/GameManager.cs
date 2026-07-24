@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,6 +9,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private HandUI handUI;
     [SerializeField] private ScoreManager scoreManager;
 
+    [Header("Game Over UI")]
+    [SerializeField] private GameObject gameOverPanel;
+
+    public bool GameActive { get; private set; }
+
     private void Awake()
     {
         timer.OnGameOver += GameOver;
@@ -15,11 +21,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        deck.BuildDeck();
-
-        handUI.Refresh();
-        
-        scoreManager.StartScore();
+        StartGame();
     }
 
     private void OnDestroy()
@@ -27,8 +29,24 @@ public class GameManager : MonoBehaviour
         timer.OnGameOver -= GameOver;
     }
 
+    private void StartGame()
+    {
+        GameActive = true;
+
+        gameOverPanel.SetActive(false);
+
+        deck.BuildDeck();
+
+        handUI.Refresh();
+
+        scoreManager.StartScore();
+    }
+
     public void PlayCard(CardInstance card)
     {
+        if (!GameActive)
+            return;
+
         CardEffectResolver.Apply(card, timer);
 
         deck.PlayCard(card);
@@ -38,6 +56,9 @@ public class GameManager : MonoBehaviour
 
     public void PlayerRefillHand()
     {
+        if (!GameActive)
+            return;
+
         if (!deck.CanRefill)
             return;
 
@@ -50,13 +71,19 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
+        GameActive = false;
+
         scoreManager.StopScore();
 
-        Debug.Log($"Final Score: {scoreManager.CurrentScore}");
+        gameOverPanel.SetActive(true);
 
-        // TODO:
-        // Disable card input
-        // Show Game Over UI
-        // Save High Score
+        Debug.Log("Game Over!");
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(
+            SceneManager.GetActiveScene().buildIndex
+        );
     }
 }
