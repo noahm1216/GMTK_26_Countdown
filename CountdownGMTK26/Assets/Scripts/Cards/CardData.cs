@@ -15,4 +15,6 @@ public class CardData : ScriptableObject
     public CardEffectType effect;
 
     public float value;
+
+    public Color textColor;
 }

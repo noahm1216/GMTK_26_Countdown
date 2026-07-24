@@ -20,6 +20,7 @@ public class CardUI : MonoBehaviour
         gameManager = gm;
 
         cardNameText.text = card.Data.cardName;
+        cardNameText.color = card.Data.textColor;
         descriptionText.text = card.Data.description;
         valueText.text = card.Data.value.ToString();
 

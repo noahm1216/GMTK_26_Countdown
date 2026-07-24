@@ -17,3 +17,4 @@ MonoBehaviour:
   artwork: {fileID: 0}
   effect: 3
   value: 1.5
+  textColor: {r: 0.745283, g: 0, b: 0, a: 1}
