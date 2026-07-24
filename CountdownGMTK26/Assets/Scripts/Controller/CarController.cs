@@ -5,17 +5,21 @@ public class CarController : MonoBehaviour
 {
     private Rigidbody _RigidBody;
 
-
+    public bool allWheelDrive;
     public Transform[] wheelRaycastPoints;
     public LayerMask drivableLayers;
 
     public float driveSpeed = 7500;
     public float driveTorque = 1000;
+    public float wheelTraction = 4000;
+    public float throttleInput;
+    public float steeringInput;
     [Space]
     public float restLength = 0.5f;
     public float springTravel = 0.2f;
     public float springStiffness = 10000;
     public float damperStiffness = 4000;
+
 
     private Vector3 startPos;
     private Quaternion startRot;
@@ -30,16 +34,21 @@ public class CarController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Turn(steeringInput);
+
         for (int i = 0; i < wheelRaycastPoints.Length; i++)
             CalculateCarSuspension(wheelRaycastPoints[i]);
     }
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.W)) Drive(Vector3.forward);
-        if (Input.GetKey(KeyCode.S)) Drive(Vector3.back);
-        if (Input.GetKey(KeyCode.D)) Turn(1);
-        if (Input.GetKey(KeyCode.A)) Turn(-1);
+        throttleInput = 0;
+        steeringInput = 0;
+
+        if (Input.GetKey(KeyCode.W)) throttleInput = 1;
+        if (Input.GetKey(KeyCode.S)) throttleInput = -1;
+        if (Input.GetKey(KeyCode.D)) steeringInput = 1;
+        if (Input.GetKey(KeyCode.A)) steeringInput = -1;
         if (Input.GetKey(KeyCode.R)) ResetCar();
     }
 
@@ -54,41 +63,41 @@ public class CarController : MonoBehaviour
 
     private void CalculateCarSuspension(Transform _wheel)
     {
+        // test wheel direction
+        Debug.DrawRay(_wheel.position, _wheel.forward, Color.blue);
+        Debug.DrawRay(_wheel.position, _wheel.up, Color.green);
+        Debug.DrawRay(_wheel.position, _wheel.right, Color.red);
+
         Vector3 rayDir = -_wheel.up;
         float maxDist = restLength + springTravel;
-
         Debug.DrawRay(_wheel.position, rayDir * maxDist, Color.red);
+        if (!Physics.Raycast(_wheel.position, rayDir, out RaycastHit hit, maxDist, drivableLayers)) return;
+        Debug.DrawRay(_wheel.position, rayDir * hit.distance, Color.green);
+        Vector3 _wheelVel = _RigidBody.GetPointVelocity(_wheel.position);
 
-        if (Physics.Raycast(_wheel.position, rayDir, out RaycastHit hit, maxDist, drivableLayers))
-        {
-            Debug.DrawRay(_wheel.position, rayDir * hit.distance, Color.green);
 
-            Vector3 springDir = _wheel.up;
-            Vector3 wheelVel = _RigidBody.GetPointVelocity(_wheel.position);
+        // Suspension for the car to bounce / wiggle 
+        float compression = Mathf.Clamp(maxDist - hit.distance, 0, springTravel);
+        float springForce = compression * springStiffness;
+        float damperForce = -Vector3.Dot(_wheelVel, _wheel.up) * damperStiffness;
+        _RigidBody.AddForceAtPosition(_wheel.up * (springForce + damperForce), hit.point);
 
-            float compression = maxDist - hit.distance;
-            compression = Mathf.Clamp(compression, 0, springTravel);
 
-            if (compression > 0)
-            {
-                float springForce = compression * springStiffness; 
-                float damperForce = -damperStiffness * Vector3.Dot(wheelVel, springDir);
-                float totalForce = springForce + damperForce;
+        // Side traction so we dont slide horribly    
+        float sideSpeed = Vector3.Dot(_wheelVel, _wheel.right);
+        Vector3 sideForce = -_wheel.right * sideSpeed * wheelTraction;
+        _RigidBody.AddForceAtPosition(sideForce, hit.point);
 
-                _RigidBody.AddForceAtPosition(springDir * totalForce, hit.point);
-            }           
-        }
-    }
 
-    private void Drive(Vector3 _dir)
-    {
-        _RigidBody.AddRelativeForce(_dir * driveSpeed);
+        // Engine calculations to get the similar car feeling 
+        if (!allWheelDrive && _wheel == wheelRaycastPoints[0] || !allWheelDrive && _wheel == wheelRaycastPoints[1]) return;
+        Vector3 driveForce = _wheel.forward * throttleInput * driveSpeed;
+        _RigidBody.AddForceAtPosition(driveForce, hit.point);
     }
 
     private void Turn(float _amount)
     {
-        _amount =  Mathf.Clamp(_amount, -1, 1);
-        _RigidBody.AddRelativeTorque(Vector3.up * driveTorque * _amount);
+        _RigidBody.AddRelativeTorque(Vector3.up * _amount * driveTorque);
     }
 
 }

@@ -632,7 +632,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 20.058819, y: 20.058819, z: 20.058819}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1889544304}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &410087039
@@ -929,7 +930,7 @@ Rigidbody:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_ImplicitCom: 1
+  m_ImplicitCom: 0
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -1047,6 +1048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4487243dcc36eb429cf1f45b66cff55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarController
+  allWheelDrive: 0
   wheelRaycastPoints:
   - {fileID: 474280567}
   - {fileID: 611743126}
@@ -1057,6 +1059,9 @@ MonoBehaviour:
     m_Bits: 8
   driveSpeed: 7500
   driveTorque: 2000
+  wheelTraction: 4000
+  throttleInput: 0
+  steeringInput: 0
   restLength: 0.5
   springTravel: 0.2
   springStiffness: 10000
@@ -1701,7 +1706,7 @@ GameObject:
   - component: {fileID: 1889544302}
   - component: {fileID: 1889544301}
   m_Layer: 3
-  m_Name: r
+  m_Name: ramp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1794,11 +1799,11 @@ Transform:
   m_GameObject: {fileID: 1889544300}
   serializedVersion: 2
   m_LocalRotation: {x: 0.13052598, y: -0, z: -0, w: 0.9914449}
-  m_LocalPosition: {x: 31, y: -1.8, z: 9.9}
-  m_LocalScale: {x: 12.208, y: 12.208, z: 36.746082}
+  m_LocalPosition: {x: 1.545455, y: -0.0897361, z: 0.4935485}
+  m_LocalScale: {x: 0.60861015, y: 0.60861015, z: 1.8319169}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 377739641}
   m_LocalEulerAnglesHint: {x: 15, y: 0, z: 0}
 --- !u!1 &2084702970
 GameObject:
@@ -1962,4 +1967,3 @@ SceneRoots:
   - {fileID: 832575519}
   - {fileID: 377739641}
   - {fileID: 523392271}
-  - {fileID: 1889544304}
