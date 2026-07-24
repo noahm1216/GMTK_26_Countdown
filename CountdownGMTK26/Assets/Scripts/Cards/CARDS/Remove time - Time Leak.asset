@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Remove time - Time Leak
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   cardName: Time Leak
-  description: -3 Seconds
+  description: -5 Seconds
   artwork: {fileID: 0}
   effect: 1
-  value: 3
+  value: 5
   textColor: {r: 0.74509805, g: 0, b: 0, a: 1}
