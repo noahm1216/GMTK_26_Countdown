@@ -29,6 +29,10 @@ public static class CardEffectResolver
             case CardEffectType.DecreaseDrainRate:
                 timer.DecreaseDrain(card.Data.value);
                 break;
+
+            case CardEffectType.FreezeTime:
+                timer.Freeze(card.Data.value);
+                break;
         }
     }
 }

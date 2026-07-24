@@ -15,6 +15,8 @@ public class TimerManager : MonoBehaviour
 
     public event Action OnGameOver;
 
+    private float freezeTimer;
+
     void Start()
     {
         CurrentTime = startingTime;
@@ -25,6 +27,12 @@ public class TimerManager : MonoBehaviour
     {
         if (!IsRunning)
             return;
+
+        if (freezeTimer > 0)
+        {
+            freezeTimer -= Time.deltaTime;
+            return;
+        }
 
         CurrentTime -= drainRate * Time.deltaTime;
 
@@ -67,5 +75,12 @@ public class TimerManager : MonoBehaviour
     public void DecreaseDrain(float amount)
     {
         drainRate = Mathf.Max(.1f, drainRate - amount);
+    }
+
+    public void Freeze(float seconds)
+    {
+        freezeTimer = Mathf.Max(freezeTimer, seconds);
+
+        Debug.Log($"Timer Frozen for {seconds} seconds.");
     }
 }
