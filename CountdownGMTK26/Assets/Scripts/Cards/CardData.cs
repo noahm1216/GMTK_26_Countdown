@@ -18,6 +18,9 @@ public class CardData : ScriptableObject
 
     public Color textColor = Color.white;
 
+    [Header("Special Rules")]
+    public bool removeAfterPlay;
+
 #if UNITY_EDITOR
     private void OnValidate()
     {
