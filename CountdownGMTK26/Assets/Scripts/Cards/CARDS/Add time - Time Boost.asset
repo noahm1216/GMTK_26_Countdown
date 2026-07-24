@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e6a3b5ed4c939c4b9c80a85727dcc33, type: 3}
-  m_Name: Divide time - The Big Divide
+  m_Name: Add time - Time Boost
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardName: Big Divide
-  description: Divide Time by 2
+  cardName: Time Boost
+  description: +2 Seconds
   artwork: {fileID: 0}
-  effect: 3
+  effect: 0
   value: 2
-  textColor: {r: 0.745283, g: 0, b: 0, a: 1}
+  textColor: {r: 0.0732519, g: 0.5188679, b: 0, a: 1}

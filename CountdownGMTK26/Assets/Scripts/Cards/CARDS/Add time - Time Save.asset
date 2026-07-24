@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e6a3b5ed4c939c4b9c80a85727dcc33, type: 3}
-  m_Name: Remove time Uncommon
+  m_Name: Add time - Time Save
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardName: Remove time
-  description: Removes 1 second from countdown
+  cardName: Time Save
+  description: +8 Seconds
   artwork: {fileID: 0}
-  effect: 1
-  value: 3
-  textColor: {r: 0.74509805, g: 0, b: 0, a: 1}
+  effect: 0
+  value: 8
+  textColor: {r: 0.07450981, g: 0.5176471, b: 0, a: 1}

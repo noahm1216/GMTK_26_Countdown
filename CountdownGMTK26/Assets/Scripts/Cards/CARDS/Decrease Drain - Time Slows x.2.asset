@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e6a3b5ed4c939c4b9c80a85727dcc33, type: 3}
-  m_Name: Divide time - The Big Divide
+  m_Name: Decrease Drain - Time Slows x.2
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardName: Big Divide
-  description: Divide Time by 2
+  cardName: Slow down
+  description: Decrease Drain -0.2
   artwork: {fileID: 0}
-  effect: 3
-  value: 2
-  textColor: {r: 0.745283, g: 0, b: 0, a: 1}
+  effect: 5
+  value: 0.2
+  textColor: {r: 0.45289668, g: 0, b: 0.9137255, a: 1}
