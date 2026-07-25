@@ -15,6 +15,8 @@ public class CardUI : MonoBehaviour
     private CardModifierBase mod;
     private GameManager gameManager;
 
+    private CardAnimation animation;
+
     public void InitializeCard(CardInstance cardInstance, GameManager gm)
     {
         card = cardInstance;
@@ -30,6 +32,13 @@ public class CardUI : MonoBehaviour
 
         button.onClick.RemoveAllListeners();
         button.onClick.AddListener(OnClicked);
+
+        animation = GetComponent<CardAnimation>();
+
+        if (animation != null)
+        {
+            animation.AnimateEnter();
+        }
     }
 
     public void InitializeMod(CardModifierBase cardMod, GameManager gm)

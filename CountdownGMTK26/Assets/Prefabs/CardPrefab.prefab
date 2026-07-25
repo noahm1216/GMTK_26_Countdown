@@ -438,6 +438,8 @@ GameObject:
   - component: {fileID: 8372934238581032321}
   - component: {fileID: 2868270764678938912}
   - component: {fileID: 2435752298303661526}
+  - component: {fileID: 5741798352673472442}
+  - component: {fileID: 5917935871170215568}
   m_Layer: 5
   m_Name: CardPrefab
   m_TagString: Untagged
@@ -588,6 +590,33 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!225 &5741798352673472442
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6888758246799465993}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &5917935871170215568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6888758246799465993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7a9ffbc99f26cd4fb8c60914f99daba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CardAnimation
+  enterSpeed: 4
+  exitSpeed: 8
+  popScale: 1.15
 --- !u!1 &8392584465231381079
 GameObject:
   m_ObjectHideFlags: 0
