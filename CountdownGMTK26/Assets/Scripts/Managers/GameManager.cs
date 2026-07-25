@@ -67,7 +67,8 @@ public class GameManager : MonoBehaviour
         if (!modifierManager || !deck) { Debug.LogWarning("CANNOT GRAB UPGRADE OPTIONS"); return; }
 
         CardData option1 = deck.ReturnCardFromAllCards(EffectAlignment.Positive);
-        CardModifierBase option2 = modifierManager.ReturnModiferFromAllModifiers( EffectAlignment.Positive);
+        CardModifierBase option2 = modifierManager.ReturnModiferFromAllModifiers(EffectAlignment.Positive);
+        if (option2 != null) print($"GOT MODIFIER: {option2.modName} - {option2.description}");
 
         if (upgradeUI) upgradeUI.gameObject.SetActive(true);
         // create or populate reference to card options

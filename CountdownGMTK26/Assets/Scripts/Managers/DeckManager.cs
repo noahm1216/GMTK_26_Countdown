@@ -58,7 +58,7 @@ public class DeckManager : MonoBehaviour
                         possibleCards.Add(allCards[i]);
                 }
             }
-            cardToReturn = possibleCards[UnityEngine.Random.Range(0, possibleCards.Count + 1)];
+            cardToReturn = possibleCards[UnityEngine.Random.Range(0, possibleCards.Count)];
         }
 
         return cardToReturn;
