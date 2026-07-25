@@ -294,6 +294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b49daafaaedc294b91f1c17b064f5ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeUI
+  uiHolder: {fileID: 2444302194514920516}
   cardChoiceOne: {fileID: 4316637016828689635}
   cardChoiceTwo: {fileID: 6908246805783406392}
 --- !u!1001 &2029403174534888899
@@ -304,6 +305,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5155826698291035769}
     m_Modifications:
+    - target: {fileID: 2868270764678938912, guid: 405a0e13bb5e7174c8584b6f0b7ca57a, type: 3}
+      propertyPath: isUpgrade
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5382250130097981714, guid: 405a0e13bb5e7174c8584b6f0b7ca57a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -417,6 +422,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5155826698291035769}
     m_Modifications:
+    - target: {fileID: 2868270764678938912, guid: 405a0e13bb5e7174c8584b6f0b7ca57a, type: 3}
+      propertyPath: isUpgrade
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5382250130097981714, guid: 405a0e13bb5e7174c8584b6f0b7ca57a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class HandUI : MonoBehaviour
 {
+    public static HandUI Instance { get; private set; }
+
     [SerializeField] private DeckManager deckManager;
     [SerializeField] private GameManager gameManager;
     [SerializeField] private GameObject cardPrefab;
@@ -18,6 +20,12 @@ public class HandUI : MonoBehaviour
     [SerializeField] private float animationSpeed = 10f;
     [SerializeField] private float maxRotation = 8f;
 
+
+    public void Awake()
+    {
+        if (Instance != null && Instance != this) Destroy(this);
+        else Instance = this;
+    }
 
     public void Refresh()
     {

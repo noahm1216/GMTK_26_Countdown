@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
+    public static ScoreManager Instance { get; private set; }
+
     [Header("UI")]
     [SerializeField] private TMP_Text scoreText;
     [SerializeField] private TMP_Text highScoreText;
@@ -14,6 +16,13 @@ public class ScoreManager : MonoBehaviour
     public int HighScore => highScore;
 
     private bool isCounting;
+
+    public void Awake()
+    {
+        if (Instance != null && Instance != this) Destroy(this);
+        else Instance = this;
+    }
+
 
     private void Start()
     {

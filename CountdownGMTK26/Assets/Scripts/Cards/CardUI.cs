@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class CardUI : MonoBehaviour
 {
+    public bool isUpgrade;
+
     [Header("UI")]
     [SerializeField] private TMP_Text cardNameText;
     [SerializeField] private TMP_Text descriptionText;
@@ -86,7 +88,18 @@ public class CardUI : MonoBehaviour
 
     private void OnClicked()
     {
-        gameManager.PlayCard(card, this);
+        if (isUpgrade)
+        {
+            if (mod)
+                gameManager.modifierManager.AddModifierToOwned(mod);
+            else if (card.Data)
+                gameManager.deck.AddCardToDeck(card.Data);
+
+            gameManager.upgradeUI.ShowCanvas(false);
+            print("MOD SELECTED - RETURN TO THE GAME");
+        }
+        else
+            gameManager.PlayCard(card, this);
     }
 
     public void AnimateToDiscard(Vector3 target, System.Action onFinished)

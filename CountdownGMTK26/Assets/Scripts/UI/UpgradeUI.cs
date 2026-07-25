@@ -2,13 +2,26 @@ using UnityEngine;
 
 public class UpgradeUI : MonoBehaviour
 {
+    public static UpgradeUI Instance { get; private set; }
+    public GameObject uiHolder;
     public CardUI cardChoiceOne;
     public CardUI cardChoiceTwo;
 
 
+    public void Awake()
+    {
+        if (Instance != null && Instance != this) Destroy(this);
+        else Instance = this;
+    }
+
     private void Start()
     {
-        transform.gameObject.SetActive(false);
+        ShowCanvas(false);
+    }
+
+    public void ShowCanvas(bool _show)
+    {
+        uiHolder.SetActive(_show);
     }
 
     public void UpdateCardInformation(CardInstance _cardInstance, GameManager _gm)

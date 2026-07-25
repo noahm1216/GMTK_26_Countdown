@@ -3,13 +3,15 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance { get; private set; }
+
     [Header("Managers")]
-    [SerializeField] private TimerManager timer;
-    [SerializeField] private DeckManager deck;
-    [SerializeField] private HandUI handUI;
-    [SerializeField] private UpgradeUI upgradeUI;
-    [SerializeField] private ScoreManager scoreManager;
-    [SerializeField] private ModifierManager modifierManager;
+    public TimerManager timer { get; private set; }
+    public DeckManager deck { get; private set; }
+    public HandUI handUI { get; private set; }
+    public UpgradeUI upgradeUI { get; private set; }
+    public ScoreManager scoreManager { get; private set; }
+    public ModifierManager modifierManager { get; private set; }
    
 
     [Header("Game Over UI")]
@@ -19,6 +21,16 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        if (Instance != null && Instance != this) Destroy(this);
+        else Instance = this;
+        // refs
+        timer = TimerManager.Instance;
+        deck = DeckManager.Instance;
+        handUI = HandUI.Instance;
+        upgradeUI = UpgradeUI.Instance;
+        scoreManager = ScoreManager.Instance;
+        modifierManager = ModifierManager.Instance;        
+
         timer.OnGameOver += GameOver;
     }
 
@@ -92,8 +104,8 @@ public class GameManager : MonoBehaviour
     }
 
     private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha0)) { print("LOAD UPGRADE MENU"); GrabUpgradeOptions(); }
+    { 
+        if (Input.GetKeyDown(KeyCode.Alpha0))  GrabUpgradeOptions(); 
     }
 
     public void GrabUpgradeOptions()
@@ -104,10 +116,11 @@ public class GameManager : MonoBehaviour
         CardModifierBase option2 = modifierManager.ReturnModiferFromAllModifiers(EffectAlignment.Positive);
         if (option2 != null) print($"GOT MODIFIER: {option2.modName} - {option2.description}");
 
-        if (upgradeUI) upgradeUI.gameObject.SetActive(true);
+        
         // create or populate reference to card options
         if (upgradeUI && option1) upgradeUI.UpdateCardInformation(new CardInstance(option1), this);
         if (upgradeUI && option2) upgradeUI.UpdateRuneInformation(option2, this);
+        if (upgradeUI) upgradeUI.ShowCanvas(true);
 
     }
 

@@ -3,6 +3,8 @@ using System;
 
 public class TimerManager : MonoBehaviour
 {
+    public static TimerManager Instance { get; private set; }
+
     [SerializeField]
     private float startingTime = 5f;
 
@@ -31,6 +33,12 @@ public class TimerManager : MonoBehaviour
     private float nextDrainIncrease;
 
     public float CurrentDrainRate => drainRate;
+
+    public void Awake()
+    {
+        if (Instance != null && Instance != this) Destroy(this);
+        else Instance = this;
+    }
 
     void Start()
     {

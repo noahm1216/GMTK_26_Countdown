@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DeckManager : MonoBehaviour
 {
+    public static DeckManager Instance { get; private set; }
+
     public List<CardData> allCards = new List<CardData>();
 
     [Header("Starting Deck")]
@@ -29,6 +31,12 @@ public class DeckManager : MonoBehaviour
     public int DiscardCount => discardPile.Count;
 
     public bool CanRefill => Hand.Count <= REFILL_THRESHOLD;
+
+    public void Awake()
+    {
+        if (Instance != null && Instance != this) Destroy(this);
+        else Instance = this;
+    }
 
 
     /// <summary>
@@ -63,6 +71,11 @@ public class DeckManager : MonoBehaviour
         }
 
         return cardToReturn;
+    }
+
+    public void AddCardToDeck(CardData _card)
+    {
+        startingDeck.Add(_card);
     }
 
 

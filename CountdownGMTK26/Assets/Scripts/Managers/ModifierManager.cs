@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class ModifierManager : MonoBehaviour
 {
+    public static ModifierManager Instance { get; private set; }
+
     public List<CardModifierBase> allModifiers = new List<CardModifierBase>();
     public List<CardModifierBase> ownedModifiers = new List<CardModifierBase>();
 
+
+    public void Awake()
+    {
+        if (Instance != null && Instance != this) Destroy(this);
+        else Instance = this;
+    }
 
     public float CheckModsCardPlayed(CardData _cardData, float _timeCur = -1)
     {
@@ -30,7 +38,7 @@ public class ModifierManager : MonoBehaviour
 
     public void AddModifierToOwned(CardModifierBase _mod)
     {
-        allModifiers.Add(_mod);
+        ownedModifiers.Add(_mod);
         // DO SOMETHING VISUAL?
     }
 
