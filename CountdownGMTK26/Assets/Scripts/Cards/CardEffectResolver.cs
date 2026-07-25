@@ -25,56 +25,63 @@ public static class CardEffectResolver
             case CardEffectType.AddTime:
 
                 timer.AddTime(value);
-               
+
 
                 break;
 
             case CardEffectType.RemoveTime:
 
                 timer.RemoveTime(value);
-               
+
 
                 break;
 
             case CardEffectType.MultiplyTime:
 
                 timer.MultiplyTime(value);
-               
+
 
                 break;
 
             case CardEffectType.DivideTime:
 
                 timer.DivideTime(value);
-               
+
 
                 break;
 
             case CardEffectType.IncreaseDrainRate:
 
                 timer.IncreaseDrain(value);
-                
+
 
                 break;
 
             case CardEffectType.DecreaseDrainRate:
 
                 timer.DecreaseDrain(value);
-              
+
 
                 break;
 
             case CardEffectType.FreezeTime:
 
                 timer.Freeze(value);
-               
+
 
                 break;
 
             case CardEffectType.DeleteNextPlayedCards:
 
                 deck.QueueDeleteCards((int)value);
-                
+
+
+                break;
+
+            case CardEffectType.IgnoreNextCard:
+
+                deck.QueueIgnoreCard(
+                    (int)value);
 
                 break;
         }

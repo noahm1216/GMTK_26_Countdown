@@ -72,7 +72,17 @@ public class GameManager : MonoBehaviour
 
     private void FinishPlayingCard(CardInstance card)
     {
-        CardEffectResolver.Apply(card, timer, modifierManager, deck);
+        bool ignored = deck.PlayCard(card);
+
+
+        if (!ignored)
+        {
+            CardEffectResolver.Apply(
+                card,
+                timer,
+                modifierManager,
+                deck);
+        }
 
         deck.PlayCard(card);
 

@@ -58,6 +58,9 @@ public class CardData : ScriptableObject
             case CardEffectType.DeleteNextPlayedCards:
                 return $"Delete Next {value:0} Played Cards";
 
+            case CardEffectType.IgnoreNextCard:
+                return $"Ignore next {value:0} card effect";
+
             default:
                 return "";
         }

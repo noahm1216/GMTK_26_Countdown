@@ -16,6 +16,7 @@ public class DeckManager : MonoBehaviour
     private readonly List<CardInstance> drawPile = new List<CardInstance>();
     private readonly List<CardInstance> discardPile = new List<CardInstance>();
     private int deleteCounter = 0;
+    private int ignoreCounter = 0;
 
 
     private const int HAND_SIZE = 7;
@@ -93,12 +94,26 @@ public class DeckManager : MonoBehaviour
     }
 
 
-    public void PlayCard(CardInstance card)
+    public bool PlayCard(CardInstance card)
     {
         if (!Hand.Contains(card))
-            return;
+            return false;
 
         Hand.Remove(card);
+
+        bool ignored = false;
+
+
+        if (ignoreCounter > 0 &&
+            card.Data.effect != CardEffectType.IgnoreNextCard)
+        {
+            ignoreCounter--;
+
+            ignored = true;
+
+            Debug.Log(
+                $"{card.Data.cardName} effect ignored.");
+        }
 
         // One-time-use cards always remove themselves.
         if (card.Data.removeAfterPlay)
@@ -128,6 +143,8 @@ public class DeckManager : MonoBehaviour
         }
 
         NotifyDeckChanged();
+        return ignored;
+
     }
 
 
@@ -225,6 +242,13 @@ public class DeckManager : MonoBehaviour
             (list[i], list[randomIndex]) =
                 (list[randomIndex], list[i]);
         }
+    }
+
+    public void QueueIgnoreCard(int amount)
+    {
+        ignoreCounter += amount;
+
+        Debug.Log($"Next {ignoreCounter} card effect(s) ignored.");
     }
 
 
