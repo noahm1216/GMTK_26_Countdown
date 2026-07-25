@@ -50,6 +50,14 @@ MonoBehaviour:
   safeFOV: 60
   dangerFOV: 100
   cameraSpeed: 2
+  dangerThreshold: 0.25
+  criticalThreshold: 0.1
+  noise: {fileID: 4057404615936346185}
+  dangerNoise: 2
+  dangerAmp: 0.05
+  criticalNoise: 4
+  criticalAmp: 0.1
+  noiseSpeed: 1
 --- !u!1 &7916795168017424020
 GameObject:
   m_ObjectHideFlags: 0
@@ -60,6 +68,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4331048329503351843}
   - component: {fileID: 6665788460924520435}
+  - component: {fileID: 4057404615936346185}
   m_Layer: 0
   m_Name: Gameplay Camera
   m_TagString: Untagged
@@ -106,7 +115,7 @@ MonoBehaviour:
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
-    FieldOfView: 96.11445
+    FieldOfView: 76.01685
     OrthographicSize: 5
     NearClipPlane: 0.3
     FarClipPlane: 1000
@@ -125,3 +134,20 @@ MonoBehaviour:
       BarrelClipping: 0.25
       Anamorphism: 0
   BlendHint: 0
+--- !u!114 &4057404615936346185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7916795168017424020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineBasicMultiChannelPerlin
+  NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  PivotOffset: {x: 0, y: 0, z: 0}
+  AmplitudeGain: 1.997097
+  FrequencyGain: 0.009985483
+  m_NoiseOffsets: {x: 643.2805, y: -942.5044, z: 130.04837}
