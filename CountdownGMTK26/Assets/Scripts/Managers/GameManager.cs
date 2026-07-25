@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private UpgradeUI upgradeUI;
     [SerializeField] private ScoreManager scoreManager;
     [SerializeField] private ModifierManager modifierManager;
+   
 
     [Header("Game Over UI")]
     [SerializeField] private GameObject gameOverPanel;
@@ -97,6 +98,7 @@ public class GameManager : MonoBehaviour
         GameActive = false;
 
         scoreManager.StopScore();
+        
 
         gameOverPanel.SetActive(true);
 

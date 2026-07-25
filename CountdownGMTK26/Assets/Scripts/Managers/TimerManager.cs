@@ -11,6 +11,8 @@ public class TimerManager : MonoBehaviour
 
     public float CurrentTime { get; private set; }
 
+    public float PeakTime { get; private set; }
+
     public bool IsRunning { get; private set; }
 
     public event Action OnGameOver;
@@ -20,6 +22,8 @@ public class TimerManager : MonoBehaviour
     void Start()
     {
         CurrentTime = startingTime;
+        PeakTime = startingTime;
+
         IsRunning = true;
     }
 
@@ -50,6 +54,11 @@ public class TimerManager : MonoBehaviour
     public void AddTime(float amount)
     {
         CurrentTime += amount;
+
+        if (CurrentTime > PeakTime)
+        {
+            PeakTime = CurrentTime;
+        }
     }
 
     public void RemoveTime(float amount)
