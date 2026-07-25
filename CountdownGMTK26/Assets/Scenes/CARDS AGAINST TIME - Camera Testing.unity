@@ -545,7 +545,7 @@ MonoBehaviour:
   timer: {fileID: 1085067964}
   safeFOV: 60
   dangerFOV: 100
-  cameraSpeed: 2
+  cameraSpeed: 0.2
 --- !u!4 &945241100
 Transform:
   m_ObjectHideFlags: 0

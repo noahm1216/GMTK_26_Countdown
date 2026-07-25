@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6d5851ca39cf7704ab86ce051e9a3227
+guid: bc51ba2eeb9c95d41a7217a053377eb9
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Zero Cool
+  - Uncial
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
