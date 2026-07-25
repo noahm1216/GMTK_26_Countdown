@@ -18,7 +18,7 @@ public class HandUI : MonoBehaviour
 
             CardUI ui = obj.GetComponent<CardUI>();
 
-            ui.Initialize(card, gameManager);
+            ui.InitializeCard(card, gameManager);
         }
     }
 }

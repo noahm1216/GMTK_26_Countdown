@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TimerManager timer;
     [SerializeField] private DeckManager deck;
     [SerializeField] private HandUI handUI;
+    [SerializeField] private UpgradeUI upgradeUI;
     [SerializeField] private ScoreManager scoreManager;
     [SerializeField] private ModifierManager modifierManager;
 
@@ -56,6 +57,11 @@ public class GameManager : MonoBehaviour
         handUI.Refresh();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha0)) { print("LOAD UPGRADE MENU"); GrabUpgradeOptions(); }
+    }
+
     public void GrabUpgradeOptions()
     {
         if (!modifierManager || !deck) { Debug.LogWarning("CANNOT GRAB UPGRADE OPTIONS"); return; }
@@ -63,8 +69,10 @@ public class GameManager : MonoBehaviour
         CardData option1 = deck.ReturnCardFromAllCards(EffectAlignment.Positive);
         CardModifierBase option2 = modifierManager.ReturnModiferFromAllModifiers( EffectAlignment.Positive);
 
-
+        if (upgradeUI) upgradeUI.gameObject.SetActive(true);
         // create or populate reference to card options
+        if (upgradeUI && option1) upgradeUI.UpdateCardInformation(new CardInstance(option1), this);
+        if (upgradeUI && option2) upgradeUI.UpdateRuneInformation(option2, this);
 
     }
 

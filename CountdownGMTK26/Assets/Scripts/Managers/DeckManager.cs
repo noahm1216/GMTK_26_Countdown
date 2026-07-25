@@ -65,7 +65,7 @@ public class DeckManager : MonoBehaviour
     }
 
 
-public void BuildDeck()
+    public void BuildDeck()
     {
         Hand.Clear();
         drawPile.Clear();

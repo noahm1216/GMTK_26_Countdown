@@ -8,30 +8,35 @@ public class ModifierManager : MonoBehaviour
     public List<CardModifierBase> ownedModifiers = new List<CardModifierBase>();
 
 
-    public float CheckModsCardPlayed(CardData _cardData, float _timeCur =-1)
+    public float CheckModsCardPlayed(CardData _cardData, float _timeCur = -1)
     {
         //print($"Checking Card Mods - Card Played : val ={_cardData.value}");
         float newValue = 0;
 
-        for(int i = 0; i < ownedModifiers.Count; i++)
+        for (int i = 0; i < ownedModifiers.Count; i++)
         {
             newValue = ownedModifiers[i].OnCardSelected(_cardData, _timeCur);
             //print("checked");
         }
 
-       //print($"Cards Checked: New Value = {newValue}");
+        //print($"Cards Checked: New Value = {newValue}");
         return newValue;
     }
 
+    public bool CardModPlayable(CardModifierBase _mod)
+    {
+        return (_mod.timesUsableInGame == -1 || _mod.timesUsableInGame > _mod.timesApplied);
+    }
 
-    public CardModifierBase ReturnModiferFromAllModifiers(EffectAlignment _alignment, int _id = -1, bool _repeatOkay = false)
+
+    public CardModifierBase ReturnModiferFromAllModifiers(EffectAlignment _alignment, int _id = -1, bool _repeatOkay = true) // set to false if we dont want repeat mod/runes
     {
         print("Return Modifier From All Modifier List");
 
         CardModifierBase cardmodToReturn = null;
         if (_id > -1 && _id <= allModifiers.Count) // grab a specific card
         {
-            if (!ownedModifiers.Contains(allModifiers[_id]) || ownedModifiers.Contains(allModifiers[_id]) && _repeatOkay)
+            if (!ownedModifiers.Contains(allModifiers[_id]) || ownedModifiers.Contains(allModifiers[_id]) && CardModPlayable(allModifiers[_id]) && _repeatOkay)
                 cardmodToReturn = allModifiers[_id];
         }
 
@@ -42,13 +47,15 @@ public class ModifierManager : MonoBehaviour
             {
                 if (allModifiers[i].alignment == _alignment)
                 {
-                    if (!ownedModifiers.Contains(allModifiers[i]) || ownedModifiers.Contains(allModifiers[i]) && _repeatOkay)
+                    if (!ownedModifiers.Contains(allModifiers[i]) || ownedModifiers.Contains(allModifiers[i]) && CardModPlayable(allModifiers[i]) && _repeatOkay)
                         possibleCardmods.Add(allModifiers[i]);
                 }
             }
-            cardmodToReturn = possibleCardmods[UnityEngine.Random.Range(0, possibleCardmods.Count + 1)];
-        }
 
+            if (possibleCardmods.Count > 0)
+                cardmodToReturn = possibleCardmods[Random.Range(0, possibleCardmods.Count)];
+            else Debug.LogError("CANT FIND ANY MOD UPGRADES");
+        }
         return null;
     }
 }

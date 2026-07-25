@@ -4,7 +4,7 @@ public abstract class CardModifierBase : MonoBehaviour
 {
 
     [Header("Card Info")]
-    public string cardName;
+    public string modName;
 
     [TextArea]
     public string description;
@@ -12,14 +12,14 @@ public abstract class CardModifierBase : MonoBehaviour
     public Sprite artwork;
 
     [Header("Gameplay")]
-    public CardEffectType effect;
+    //public CardEffectType effect;
 
     [Tooltip("How many times this rune can be applied. If -1 then unlimited")]
     public int timesUsableInGame = -1;
     [Tooltip("If this is considered a helpful, negative, or other card type. Effects which pool it will be placed in")]
     public EffectAlignment alignment;
 
-    public float value;
+    //public float value;
 
     public Color textColor = Color.white;
 

@@ -12,9 +12,10 @@ public class CardUI : MonoBehaviour
     [SerializeField] private Button button;
 
     private CardInstance card;
+    private CardModifierBase mod;
     private GameManager gameManager;
 
-    public void Initialize(CardInstance cardInstance, GameManager gm)
+    public void InitializeCard(CardInstance cardInstance, GameManager gm)
     {
         card = cardInstance;
         gameManager = gm;
@@ -26,6 +27,23 @@ public class CardUI : MonoBehaviour
 
         if (artworkImage != null)
             artworkImage.sprite = card.Data.artwork;
+
+        button.onClick.RemoveAllListeners();
+        button.onClick.AddListener(OnClicked);
+    }
+
+    public void InitializeMod(CardModifierBase cardMod, GameManager gm)
+    {
+        mod = cardMod;
+        gameManager = gm;
+
+        cardNameText.text = cardMod.modName;
+        cardNameText.color = cardMod.textColor;
+        descriptionText.text = cardMod.description;
+        //valueText.text = cardMod.value.ToString();
+
+        if (artworkImage != null)
+            artworkImage.sprite = cardMod.artwork;
 
         button.onClick.RemoveAllListeners();
         button.onClick.AddListener(OnClicked);
