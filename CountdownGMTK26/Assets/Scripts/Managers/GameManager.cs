@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private DeckManager deck;
     [SerializeField] private HandUI handUI;
     [SerializeField] private ScoreManager scoreManager;
+    [SerializeField] private ModifierManager modifierManager;
 
     [Header("Game Over UI")]
     [SerializeField] private GameObject gameOverPanel;
@@ -47,7 +48,8 @@ public class GameManager : MonoBehaviour
         if (!GameActive)
             return;
 
-        CardEffectResolver.Apply(card, timer);
+        // if multiple card effects, call them here
+        CardEffectResolver.Apply(card, timer, modifierManager);
 
         deck.PlayCard(card);
 
