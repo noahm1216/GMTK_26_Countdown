@@ -24,16 +24,15 @@ public class CardAnimation : MonoBehaviour
     }
 
 
-    public void AnimateExit(Vector3 targetPosition, bool destroyAfter = true)
+    public void AnimateExit(Vector3 targetPosition)
     {
-        StartCoroutine(ExitAnimation(targetPosition, destroyAfter));
+        StartCoroutine(ExitAnimation(targetPosition));
     }
 
 
     private IEnumerator EnterAnimation()
     {
         transform.localScale = Vector3.zero;
-
         canvasGroup.alpha = 0;
 
 
@@ -59,15 +58,13 @@ public class CardAnimation : MonoBehaviour
         }
 
 
-        // small bounce back
         transform.localScale = Vector3.one;
     }
 
 
-    private IEnumerator ExitAnimation(Vector3 target, bool destroyAfter)
+    private IEnumerator ExitAnimation(Vector3 target)
     {
         Vector3 start = transform.position;
-
 
         float progress = 0;
 
@@ -84,6 +81,13 @@ public class CardAnimation : MonoBehaviour
                     progress);
 
 
+            transform.localScale =
+                Vector3.Lerp(
+                    Vector3.one,
+                    Vector3.zero,
+                    progress);
+
+
             canvasGroup.alpha =
                 Mathf.Lerp(
                     1,
@@ -95,7 +99,6 @@ public class CardAnimation : MonoBehaviour
         }
 
 
-        if (destroyAfter)
-            Destroy(gameObject);
+        Destroy(gameObject);
     }
 }

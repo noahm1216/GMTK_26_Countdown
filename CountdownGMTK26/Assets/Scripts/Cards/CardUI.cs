@@ -61,5 +61,18 @@ public class CardUI : MonoBehaviour
     private void OnClicked()
     {
         gameManager.PlayCard(card);
+        //TestExit();
+    }
+
+    public void TestExit()
+    {
+        CardAnimation anim = GetComponent<CardAnimation>();
+
+        if (anim != null)
+        {
+            anim.AnimateExit(
+                transform.position + Vector3.right * 500f
+            );
+        }
     }
 }
