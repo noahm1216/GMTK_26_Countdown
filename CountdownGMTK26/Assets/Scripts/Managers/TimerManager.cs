@@ -19,12 +19,27 @@ public class TimerManager : MonoBehaviour
 
     private float freezeTimer;
 
+    [Header("Difficulty Scaling")]
+    [SerializeField] private bool increaseDrainOverTime = true;
+
+    [SerializeField] private float drainIncreaseInterval = 30f;
+
+    [SerializeField] private float drainIncreaseAmount = .25f;
+
+    private float elapsedTime;
+
+    private float nextDrainIncrease;
+
+    public float CurrentDrainRate => drainRate;
+
     void Start()
     {
         CurrentTime = startingTime;
         PeakTime = startingTime;
 
         IsRunning = true;
+        elapsedTime = 0;
+        nextDrainIncrease = drainIncreaseInterval;
     }
 
     void Update()
@@ -37,6 +52,20 @@ public class TimerManager : MonoBehaviour
             freezeTimer -= Time.deltaTime;
             return;
         }
+
+        elapsedTime += Time.deltaTime;
+
+
+        if (increaseDrainOverTime &&
+            elapsedTime >= nextDrainIncrease)
+        {
+            IncreaseDrain(drainIncreaseAmount);
+
+            nextDrainIncrease += drainIncreaseInterval;
+
+            Debug.Log($"Drain increased! Current drain: {drainRate}");
+        }
+
 
         CurrentTime -= drainRate * Time.deltaTime;
 

@@ -119,41 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &133955691
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 133955692}
-  m_Layer: 5
-  m_Name: DrawPilePointHand
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &133955692
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 133955691}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1306087454}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 3, y: 511}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &138187206 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 233383232027903537, guid: 465bec84e3db6be45a619d144740754f, type: 3}
@@ -354,14 +319,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 93880835711285655, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 619535593713259490, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1060083403432811674, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -369,10 +326,6 @@ PrefabInstance:
     - target: {fileID: 2472173907555537841, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
       propertyPath: m_Name
       value: Canvas_Gameplay
-      objectReference: {fileID: 0}
-    - target: {fileID: 3634011442621410233, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 144.2
       objectReference: {fileID: 0}
     - target: {fileID: 4407963160583450034, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
       propertyPath: deckManager
@@ -462,38 +415,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2077400332}
-    - target: {fileID: 5596669081574972431, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5596669081574972431, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RestartGame
-      objectReference: {fileID: 0}
     - target: {fileID: 5907423674233665131, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
       propertyPath: timer
       value: 
       objectReference: {fileID: 1085067964}
-    - target: {fileID: 6432049773598212969, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
-      propertyPath: m_Color.a
-      value: 0.9411765
-      objectReference: {fileID: 0}
-    - target: {fileID: 6677091066011683396, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6985860348142618006, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7873378779133087559, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -39.300003
-      objectReference: {fileID: 0}
-    - target: {fileID: 8509974815440305090, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
-      propertyPath: cardSpacing
-      value: 80
-      objectReference: {fileID: 0}
     - target: {fileID: 8509974815440305090, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
       propertyPath: deckManager
       value: 
@@ -502,31 +427,9 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 2077400332}
-    - target: {fileID: 8509974815440305090, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
-      propertyPath: maxRotation
-      value: -8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8509974815440305090, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
-      propertyPath: drawPilePoint
-      value: 
-      objectReference: {fileID: 133955692}
-    - target: {fileID: 8509974815440305090, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
-      propertyPath: discardPilePoint
-      value: 
-      objectReference: {fileID: 703139429}
-    - target: {fileID: 8600363515036394149, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 5244062212266295303, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 133955692}
-    - targetCorrespondingSourceObject: {fileID: 5244062212266295303, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 703139429}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
 --- !u!114 &621245480 stripped
@@ -540,41 +443,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d311fc103ac63dc4687c946614a4e8e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ModifierManager
---- !u!1 &703139428
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 703139429}
-  m_Layer: 5
-  m_Name: DiscardPilePoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &703139429
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 703139428}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1306087454}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -235, y: 154}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &738866480 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8509974815440305090, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
@@ -886,11 +754,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cf5e30dead0dca49a7561438e9d2904, type: 3}
---- !u!224 &1306087454 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5244062212266295303, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
-  m_PrefabInstance: {fileID: 365802643}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1467300975 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5248178481181722245, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
@@ -1096,6 +959,14 @@ PrefabInstance:
     - target: {fileID: 2016365106292437345, guid: 1bca4476dd723c6428028dbbf93f4749, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4087146544458656765, guid: 1bca4476dd723c6428028dbbf93f4749, type: 3}
+      propertyPath: drainIncreaseAmount
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4087146544458656765, guid: 1bca4476dd723c6428028dbbf93f4749, type: 3}
+      propertyPath: drainIncreaseInterval
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6651211166662236427, guid: 1bca4476dd723c6428028dbbf93f4749, type: 3}
       propertyPath: m_Name
