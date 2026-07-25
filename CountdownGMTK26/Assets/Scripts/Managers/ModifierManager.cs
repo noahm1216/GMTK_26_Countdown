@@ -28,6 +28,12 @@ public class ModifierManager : MonoBehaviour
         return (_mod.timesUsableInGame == -1 || _mod.timesUsableInGame > _mod.timesApplied);
     }
 
+    public void AddModifierToOwned(CardModifierBase _mod)
+    {
+        allModifiers.Add(_mod);
+        // DO SOMETHING VISUAL?
+    }
+
 
     public CardModifierBase ReturnModiferFromAllModifiers(EffectAlignment _alignment, int _id = -1, bool _repeatOkay = true) // set to false if we dont want repeat mod/runes
     {

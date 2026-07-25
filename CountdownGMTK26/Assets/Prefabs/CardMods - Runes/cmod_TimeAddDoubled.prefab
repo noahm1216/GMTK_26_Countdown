@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CMod_TimeAddDoubled
   modName: I Need More Time
   description: Any time that would be added, is now doubled!
-  artwork: {fileID: 1712083099, guid: 6b723b27fb25c1149b30ff2f04f79974, type: 3}
+  artwork: {fileID: -356852393, guid: 6b723b27fb25c1149b30ff2f04f79974, type: 3}
   timesUsableInGame: -1
   alignment: 0
   textColor: {r: 0, g: 0.3921569, b: 0, a: 1}

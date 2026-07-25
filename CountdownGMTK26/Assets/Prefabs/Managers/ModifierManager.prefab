@@ -46,5 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ModifierManager
   allModifiers:
   - {fileID: 4770411076730233072, guid: 5cb1a43a0f92c1f428e4cc0c0aece6ce, type: 3}
+  - {fileID: -5133706523409417715, guid: 5645fcddd583ec94aaee893d59df4e84, type: 3}
   ownedModifiers:
   - {fileID: 4770411076730233072, guid: 5cb1a43a0f92c1f428e4cc0c0aece6ce, type: 3}
