@@ -26,8 +26,8 @@ public class DeckUI : MonoBehaviour
 
     private void Refresh()
     {
-        drawText.text = $"Draw: {deckManager.DrawCount}";
-        discardText.text = $"Played Cards: {deckManager.DiscardCount}";
-        handText.text = $"Hand: {deckManager.HandCount}";
+        drawText.text = $"{deckManager.DrawCount} Drawn";
+        discardText.text = $"{deckManager.DiscardCount} Played";
+        handText.text = $"{deckManager.HandCount} in Hand";
     }
 }
