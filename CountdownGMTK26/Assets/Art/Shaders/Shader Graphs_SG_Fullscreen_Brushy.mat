@@ -41,16 +41,16 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _brush_scale: 1.27
+    - _brush_scale: 3
     - _color_simplification: 0.2
     - _color_steps: 12
     - _direction_variation: 0.25
-    - _distortion: 0.02
+    - _distortion: 0.1
     - _grain_scale: 0.63
     - _grain_scroll_speed: 0
     - _grain_strength: 0.2
-    - _scroll_speed: 0
-    - _stroke_length: 5
+    - _scroll_speed: 0.005
+    - _stroke_length: 8
     m_Colors:
     - _stroke_direction: {r: 1, g: 0.25, b: 0, a: 0}
   m_BuildTextureStacks: []
