@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   cardName: Time Crash
   description: -10 Seconds
-  artwork: {fileID: 0}
+  artwork: {fileID: -1003157482, guid: 6b723b27fb25c1149b30ff2f04f79974, type: 3}
   effect: 1
+  alignment: 0
   value: 10
   textColor: {r: 0.74509805, g: 0, b: 0, a: 1}
+  removeAfterPlay: 0

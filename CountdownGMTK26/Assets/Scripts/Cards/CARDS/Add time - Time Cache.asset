@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Add time - Time Cache
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   cardName: Add time
-  description: 'Adds 4 seconds to countdown '
-  artwork: {fileID: 0}
+  description: +4 Seconds
+  artwork: {fileID: 1712083099, guid: 6b723b27fb25c1149b30ff2f04f79974, type: 3}
   effect: 0
+  alignment: 0
   value: 4
   textColor: {r: 0.07450981, g: 0.5176471, b: 0, a: 1}
+  removeAfterPlay: 0

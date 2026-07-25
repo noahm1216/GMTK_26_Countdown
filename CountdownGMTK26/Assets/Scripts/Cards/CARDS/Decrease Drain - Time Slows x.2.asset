@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   cardName: Slow down
   description: Decrease Drain -0.2
-  artwork: {fileID: 0}
+  artwork: {fileID: -2102455126, guid: 6b723b27fb25c1149b30ff2f04f79974, type: 3}
   effect: 5
+  alignment: 0
   value: 0.2
   textColor: {r: 0.45289668, g: 0, b: 0.9137255, a: 1}
+  removeAfterPlay: 0

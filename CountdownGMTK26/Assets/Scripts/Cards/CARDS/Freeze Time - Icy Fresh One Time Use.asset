@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   cardName: ICY FRESH
   description: Freeze Timer for 10 Seconds
-  artwork: {fileID: 0}
+  artwork: {fileID: 490389091, guid: 6b723b27fb25c1149b30ff2f04f79974, type: 3}
   effect: 6
+  alignment: 0
   value: 10
   textColor: {r: 0, g: 0.7623091, b: 1, a: 1}
   removeAfterPlay: 1
