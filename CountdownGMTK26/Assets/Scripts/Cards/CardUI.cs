@@ -11,6 +11,17 @@ public class CardUI : MonoBehaviour
     [SerializeField] private Image artworkImage;
     [SerializeField] private Button button;
 
+    [Header("Card Movement")]
+    [SerializeField] private float moveSpeed = 12f;
+    [SerializeField] private float arcHeight = 80f;
+    [SerializeField] private float rotationSpeed = 8f;
+    [SerializeField] private float bounceAmount = 15f;
+    [SerializeField] private float bounceSpeed = 12f;
+
+    private bool isMoving;
+    private Vector3 startPosition;
+    private float moveProgress;
+
     private CardInstance card;
     private CardModifierBase mod;
     private GameManager gameManager;
@@ -20,23 +31,17 @@ public class CardUI : MonoBehaviour
     private Vector3 targetPosition;
     private Quaternion targetRotation;
 
-    [SerializeField]
-    private float moveSpeed = 12f;
 
+
+    
     private void Update()
-    {
-        transform.localPosition =
-            Vector3.Lerp(
-                transform.localPosition,
-                targetPosition,
-                Time.deltaTime * moveSpeed);
-
-        transform.localRotation =
-            Quaternion.Slerp(
-                transform.localRotation,
-                targetRotation,
-                Time.deltaTime * moveSpeed);
-    }
+        {
+            if (isMoving)
+            {
+                MoveAlongArc();
+            }
+        }
+   
 
     public void InitializeCard(CardInstance cardInstance, GameManager gm)
     {
@@ -99,10 +104,56 @@ public class CardUI : MonoBehaviour
         animation.AnimateDestroy(onFinished);
     }
 
-    public void MoveTo(Vector3 localPosition, float rotation)
+    public void MoveTo(Vector3 position, float rotation)
     {
-        targetPosition = localPosition;
+        targetPosition = position;
         targetRotation = Quaternion.Euler(0, 0, rotation);
+
+        startPosition = transform.localPosition;
+
+        moveProgress = 0;
+        isMoving = true;
+    }
+
+    private void MoveAlongArc()
+    {
+        moveProgress += Time.deltaTime * moveSpeed;
+
+
+        float t = Mathf.Clamp01(moveProgress);
+
+
+        // Smooth acceleration/deceleration
+        float smoothT = Mathf.SmoothStep(0, 1, t);
+
+
+        Vector3 position =
+            Vector3.Lerp(
+                startPosition,
+                targetPosition,
+                smoothT);
+
+
+        // Add arc
+        position.y +=
+            Mathf.Sin(t * Mathf.PI) * arcHeight;
+
+
+        transform.localPosition = position;
+
+
+        transform.localRotation =
+            Quaternion.Lerp(
+                transform.localRotation,
+                targetRotation,
+                Time.deltaTime * rotationSpeed);
+
+
+        if (t >= 1)
+        {
+            StartCoroutine(LandingBounce());
+            isMoving = false;
+        }
     }
 
     public void SetInstantPosition(Vector3 worldPosition)
@@ -114,4 +165,33 @@ public class CardUI : MonoBehaviour
         targetPosition = rect.localPosition;
     }
 
+    private System.Collections.IEnumerator LandingBounce()
+{
+    Vector3 start = transform.localPosition;
+
+    Vector3 peak =
+        start + Vector3.up * bounceAmount;
+
+
+    float timer = 0;
+
+
+    while(timer < 1)
+    {
+        timer += Time.deltaTime * bounceSpeed;
+
+
+        transform.localPosition =
+            Vector3.Lerp(
+                peak,
+                start,
+                timer);
+
+
+        yield return null;
+    }
+
+
+    transform.localPosition = start;
+}
 }

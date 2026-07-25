@@ -546,6 +546,11 @@ MonoBehaviour:
   valueText: {fileID: 6089040159118183138}
   artworkImage: {fileID: 5572990495191584484}
   button: {fileID: 2435752298303661526}
+  moveSpeed: 12
+  arcHeight: 20.5
+  rotationSpeed: 8
+  bounceAmount: 3
+  bounceSpeed: 3
 --- !u!114 &2435752298303661526
 MonoBehaviour:
   m_ObjectHideFlags: 0
