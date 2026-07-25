@@ -18,17 +18,48 @@ public class CardAnimation : MonoBehaviour
     }
 
 
-    public void AnimateEnter()
+    public void AnimateEnter(Vector3 startPosition)
     {
+        transform.position = startPosition;
         StartCoroutine(EnterAnimation());
     }
 
 
-    public void AnimateExit(Vector3 targetPosition)
+    public void AnimateExit(Vector3 targetPosition, System.Action onFinished)
     {
-        StartCoroutine(ExitAnimation(targetPosition));
+        StartCoroutine(ExitAnimation(targetPosition, onFinished));
     }
 
+    public void AnimateDestroy(System.Action finished)
+    {
+        StartCoroutine(DestroyRoutine(finished));
+    }
+
+    private IEnumerator DestroyRoutine(System.Action finished)
+    {
+        float t = 0;
+
+        Vector3 startScale = transform.localScale;
+
+        while (t < 1)
+        {
+            t += Time.deltaTime * exitSpeed;
+
+            transform.localScale =
+                Vector3.Lerp(
+                    startScale,
+                    Vector3.zero,
+                    t);
+
+            canvasGroup.alpha = 1 - t;
+
+            yield return null;
+        }
+
+        finished?.Invoke();
+
+        Destroy(gameObject);
+    }
 
     private IEnumerator EnterAnimation()
     {
@@ -62,7 +93,7 @@ public class CardAnimation : MonoBehaviour
     }
 
 
-    private IEnumerator ExitAnimation(Vector3 target)
+    private IEnumerator ExitAnimation(Vector3 target, System.Action onFinished)
     {
         Vector3 start = transform.position;
 
@@ -98,7 +129,7 @@ public class CardAnimation : MonoBehaviour
             yield return null;
         }
 
-
+        onFinished?.Invoke();
         Destroy(gameObject);
     }
 }

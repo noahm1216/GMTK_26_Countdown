@@ -45,15 +45,38 @@ public class GameManager : MonoBehaviour
         scoreManager.StartScore();
     }
 
-    public void PlayCard(CardInstance card)
+    public void PlayCard(CardInstance card, CardUI ui)
     {
         if (!GameActive)
             return;
 
-        // if multiple card effects, call them here
+        // One-time card
+        if (card.Data.removeAfterPlay)
+        {
+            ui.AnimateDestroy(() =>
+            {
+                FinishPlayingCard(card);
+            });
+
+            return;
+        }
+
+        // Normal card
+        ui.AnimateToDiscard(
+            handUI.DiscardPilePosition,
+            () =>
+            {
+                FinishPlayingCard(card);
+            });
+    }
+
+    private void FinishPlayingCard(CardInstance card)
+    {
         CardEffectResolver.Apply(card, timer, modifierManager, deck);
 
         deck.PlayCard(card);
+
+        handUI.RemoveCard(card);
 
         handUI.Refresh();
     }

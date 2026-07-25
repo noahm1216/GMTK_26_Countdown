@@ -17,6 +17,27 @@ public class CardUI : MonoBehaviour
 
     private CardAnimation animation;
 
+    private Vector3 targetPosition;
+    private Quaternion targetRotation;
+
+    [SerializeField]
+    private float moveSpeed = 12f;
+
+    private void Update()
+    {
+        transform.localPosition =
+            Vector3.Lerp(
+                transform.localPosition,
+                targetPosition,
+                Time.deltaTime * moveSpeed);
+
+        transform.localRotation =
+            Quaternion.Slerp(
+                transform.localRotation,
+                targetRotation,
+                Time.deltaTime * moveSpeed);
+    }
+
     public void InitializeCard(CardInstance cardInstance, GameManager gm)
     {
         card = cardInstance;
@@ -37,7 +58,7 @@ public class CardUI : MonoBehaviour
 
         if (animation != null)
         {
-            animation.AnimateEnter();
+            //animation.AnimateEnter();
         }
     }
 
@@ -60,19 +81,37 @@ public class CardUI : MonoBehaviour
 
     private void OnClicked()
     {
-        gameManager.PlayCard(card);
-        //TestExit();
+        gameManager.PlayCard(card, this);
     }
 
-    public void TestExit()
+    public void AnimateToDiscard(Vector3 target, System.Action onFinished)
     {
-        CardAnimation anim = GetComponent<CardAnimation>();
-
-        if (anim != null)
-        {
-            anim.AnimateExit(
-                transform.position + Vector3.right * 500f
-            );
-        }
+        animation.AnimateExit(target, onFinished);
     }
+
+    public void AnimateToDrawPile(Vector3 target, System.Action onFinished)
+    {
+        animation.AnimateExit(target, onFinished);
+    }
+
+    public void AnimateDestroy(System.Action onFinished)
+    {
+        animation.AnimateDestroy(onFinished);
+    }
+
+    public void MoveTo(Vector3 localPosition, float rotation)
+    {
+        targetPosition = localPosition;
+        targetRotation = Quaternion.Euler(0, 0, rotation);
+    }
+
+    public void SetInstantPosition(Vector3 worldPosition)
+    {
+        RectTransform rect = transform as RectTransform;
+
+        rect.position = worldPosition;
+
+        targetPosition = rect.localPosition;
+    }
+
 }
