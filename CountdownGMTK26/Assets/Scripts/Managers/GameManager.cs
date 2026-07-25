@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
             return;
 
         // if multiple card effects, call them here
-        CardEffectResolver.Apply(card, timer, modifierManager);
+        CardEffectResolver.Apply(card, timer, modifierManager, deck);
 
         deck.PlayCard(card);
 

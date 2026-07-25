@@ -2636,6 +2636,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 233383232027903537, guid: 465bec84e3db6be45a619d144740754f, type: 3}
+      propertyPath: startingDeck.Array.size
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 233383232027903537, guid: 465bec84e3db6be45a619d144740754f, type: 3}
+      propertyPath: 'startingDeck.Array.data[21]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 9bec415d746d05242b45c9c11fb85ee1, type: 2}
     - target: {fileID: 5699293364807706946, guid: 465bec84e3db6be45a619d144740754f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0

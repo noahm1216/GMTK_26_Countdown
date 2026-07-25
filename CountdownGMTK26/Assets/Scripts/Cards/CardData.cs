@@ -53,6 +53,9 @@ public class CardData : ScriptableObject
             case CardEffectType.FreezeTime:
                 return $"Freeze Timer for {value:0.#} Seconds";
 
+            case CardEffectType.DeleteNextPlayedCards:
+                return $"Delete Next {value:0} Played Cards";
+
             default:
                 return "";
         }

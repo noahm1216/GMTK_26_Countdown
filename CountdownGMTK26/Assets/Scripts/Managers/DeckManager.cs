@@ -12,6 +12,7 @@ public class DeckManager : MonoBehaviour
 
     private readonly List<CardInstance> drawPile = new();
     private readonly List<CardInstance> discardPile = new();
+    private int deleteCounter = 0;
 
     private const int HAND_SIZE = 7;
     private const int REFILL_THRESHOLD = 3;
@@ -45,34 +46,47 @@ public class DeckManager : MonoBehaviour
         NotifyDeckChanged();
     }
 
+    public void QueueDeleteCards(int amount)
+    {
+        deleteCounter += amount;
+
+        Debug.Log($"Delete queued. Next {deleteCounter} played cards will be removed.");
+    }
+
 
     public void PlayCard(CardInstance card)
     {
         if (!Hand.Contains(card))
             return;
 
-
         Hand.Remove(card);
 
-
+        // One-time-use cards always remove themselves.
         if (card.Data.removeAfterPlay)
         {
-            // Permanently removed from the game
             Debug.Log($"{card.Data.cardName} removed permanently.");
         }
+
+        // Delete effect should NEVER consume itself.
+        else if (
+            deleteCounter > 0 &&
+            card.Data.effect != CardEffectType.DeleteNextPlayedCards)
+        {
+            deleteCounter--;
+
+            Debug.Log($"{card.Data.cardName} permanently deleted. Remaining deletes: {deleteCounter}");
+        }
+
+        // Normal behavior
         else
         {
-            // Normal cards go to Played Cards
             discardPile.Add(card);
         }
 
-
-        // Entire deck cycle completed
         if (drawPile.Count == 0 && Hand.Count == 0)
         {
             ReshuffleDiscard();
         }
-
 
         NotifyDeckChanged();
     }

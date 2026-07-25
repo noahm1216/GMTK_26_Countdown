@@ -9,5 +9,7 @@ public enum CardEffectType
     IncreaseDrainRate,
     DecreaseDrainRate,
 
-    FreezeTime
+    FreezeTime,
+
+    DeleteNextPlayedCards
 }
