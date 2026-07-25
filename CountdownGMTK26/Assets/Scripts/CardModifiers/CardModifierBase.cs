@@ -2,10 +2,33 @@ using UnityEngine;
 
 public abstract class CardModifierBase : MonoBehaviour
 {
-    public int timesApplied { get; protected set; } // how many times this bonus has been activated
+
+    [Header("Card Info")]
+    public string cardName;
+
+    [TextArea]
+    public string description;
+
+    public Sprite artwork;
+
+    [Header("Gameplay")]
+    public CardEffectType effect;
+
     [Tooltip("How many times this rune can be applied. If -1 then unlimited")]
     public int timesUsableInGame = -1;
-    public EffectAlignment alignment = EffectAlignment.Neutral;
+    [Tooltip("If this is considered a helpful, negative, or other card type. Effects which pool it will be placed in")]
+    public EffectAlignment alignment;
+
+    public float value;
+
+    public Color textColor = Color.white;
+
+    [Header("Special Rules")]
+    public bool removeAfterPlay;
+
+
+    public int timesApplied { get; protected set; } // how many times this bonus has been activated
+    
 
     /// <summary>
     /// When a card is selected an event occurs

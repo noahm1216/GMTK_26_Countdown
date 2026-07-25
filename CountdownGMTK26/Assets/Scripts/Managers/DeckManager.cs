@@ -30,6 +30,20 @@ public class DeckManager : MonoBehaviour
     public bool CanRefill => Hand.Count <= REFILL_THRESHOLD;
 
 
+    /// <summary>
+    /// This function returns a single card from the list of all cards that are in the game.
+    /// </summary>
+    /// <param name="_alignment"> which pool of cards to pull from</param>
+    /// <param name="_id"> if we want a specific index, we can ask for it here otherwise -1 = random</param>
+    /// <param name="_repeatOkay"> if we dont mind a duplicate, or no dupes</param>
+    /// <returns></returns>
+    public CardData ReturnCardFromAllCards(EffectAlignment _alignment, int _id = -1, bool _repeatOkay = false)
+    {
+        print("Return Card From All Cards List");
+        return null;
+    }
+
+
     public void BuildDeck()
     {
         Hand.Clear();
