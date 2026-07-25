@@ -9,7 +9,7 @@ public class DeckManager : MonoBehaviour
     [Header("Starting Deck")]
     [SerializeField]
     private List<CardData> startingDeck = new List<CardData>();
-    
+
 
     public List<CardInstance> Hand { get; private set; } = new List<CardInstance>();
 
@@ -37,14 +37,35 @@ public class DeckManager : MonoBehaviour
     /// <param name="_id"> if we want a specific index, we can ask for it here otherwise -1 = random</param>
     /// <param name="_repeatOkay"> if we dont mind a duplicate, or no dupes</param>
     /// <returns></returns>
-    public CardData ReturnCardFromAllCards(EffectAlignment _alignment, int _id = -1, bool _repeatOkay = false)
+    public CardData ReturnCardFromAllCards(EffectAlignment _alignment, int _id = -1, bool _repeatOkay = true)
     {
-        print("Return Card From All Cards List");
-        return null;
+        //print("Return Card From All Cards List");
+        CardData cardToReturn = null;
+        if (_id > -1 && _id <= allCards.Count) // grab a specific card
+        {
+            if (!startingDeck.Contains(allCards[_id]) || startingDeck.Contains(allCards[_id]) && _repeatOkay)
+                cardToReturn = allCards[_id];
+        }
+
+        if (cardToReturn == null)
+        {
+            List<CardData> possibleCards = new List<CardData>();
+            for (int i = 0; i < allCards.Count; i++)
+            {
+                if (allCards[i].alignment == _alignment)
+                {
+                    if (!startingDeck.Contains(allCards[i]) || startingDeck.Contains(allCards[i]) && _repeatOkay)
+                        possibleCards.Add(allCards[i]);
+                }
+            }
+            cardToReturn = possibleCards[UnityEngine.Random.Range(0, possibleCards.Count + 1)];
+        }
+
+        return cardToReturn;
     }
 
 
-    public void BuildDeck()
+public void BuildDeck()
     {
         Hand.Clear();
         drawPile.Clear();
