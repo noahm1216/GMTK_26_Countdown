@@ -4,8 +4,8 @@ public abstract class CardModifierBase : MonoBehaviour
 {
     public int timesApplied { get; protected set; } // how many times this bonus has been activated
     [Tooltip("How many times this rune can be applied. If -1 then unlimited")]
-    public int timesUsableInGame = -1; 
-
+    public int timesUsableInGame = -1;
+    public EffectAlignment alignment = EffectAlignment.Neutral;
 
     /// <summary>
     /// When a card is selected an event occurs

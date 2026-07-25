@@ -11,5 +11,12 @@ public enum CardEffectType
 
     FreezeTime,
 
-    DeleteNextPlayedCards
+    DeleteNextPlayedCards,
+}
+
+public enum EffectAlignment
+{
+    Positive,
+    Negative,
+    Neutral
 }

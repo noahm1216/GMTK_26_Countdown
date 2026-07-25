@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class DeckManager : MonoBehaviour
 {
+    public List<CardData> allCards = new List<CardData>();
+
     [Header("Starting Deck")]
     [SerializeField]
-    private List<CardData> startingDeck = new();
+    private List<CardData> startingDeck = new List<CardData>();
+    
 
-    public List<CardInstance> Hand { get; private set; } = new();
+    public List<CardInstance> Hand { get; private set; } = new List<CardInstance>();
 
-    private readonly List<CardInstance> drawPile = new();
-    private readonly List<CardInstance> discardPile = new();
+    private readonly List<CardInstance> drawPile = new List<CardInstance>();
+    private readonly List<CardInstance> discardPile = new List<CardInstance>();
     private int deleteCounter = 0;
+
 
     private const int HAND_SIZE = 7;
     private const int REFILL_THRESHOLD = 3;

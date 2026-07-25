@@ -56,6 +56,18 @@ public class GameManager : MonoBehaviour
         handUI.Refresh();
     }
 
+    public void GrabUpgradeOptions()
+    {
+        if (!modifierManager || !deck) { Debug.LogWarning("CANNOT GRAB UPGRADE OPTIONS"); return; }
+
+        CardData option1 = null;
+        CardModifierBase option2 = modifierManager.ReturnModifer( EffectAlignment.Positive);
+
+
+        // create or populate reference to card options
+
+    }
+
     public void PlayerRefillHand()
     {
         if (!GameActive)

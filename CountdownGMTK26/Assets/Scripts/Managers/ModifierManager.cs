@@ -22,4 +22,10 @@ public class ModifierManager : MonoBehaviour
        //print($"Cards Checked: New Value = {newValue}");
         return newValue;
     }
+
+
+    public CardModifierBase ReturnModifer(EffectAlignment _alignment, int _id = -1, bool _repeatOkay = false)
+    {
+        return null;
+    }
 }

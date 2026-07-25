@@ -14,6 +14,8 @@ public class CardData : ScriptableObject
     [Header("Gameplay")]
     public CardEffectType effect;
 
+    public EffectAlignment alignment;
+
     public float value;
 
     public Color textColor = Color.white;
