@@ -24,7 +24,7 @@ public class ModifierManager : MonoBehaviour
     }
 
 
-    public CardModifierBase ReturnModifer(EffectAlignment _alignment, int _id = -1, bool _repeatOkay = false)
+    public CardModifierBase ReturnModiferFromAllModifiers(EffectAlignment _alignment, int _id = -1, bool _repeatOkay = false)
     {
         print("Return Modifier From All Modifier List");
         return null;
