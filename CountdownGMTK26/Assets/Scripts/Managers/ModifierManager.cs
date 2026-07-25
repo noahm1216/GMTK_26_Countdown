@@ -27,6 +27,28 @@ public class ModifierManager : MonoBehaviour
     public CardModifierBase ReturnModiferFromAllModifiers(EffectAlignment _alignment, int _id = -1, bool _repeatOkay = false)
     {
         print("Return Modifier From All Modifier List");
+
+        CardModifierBase cardmodToReturn = null;
+        if (_id > -1 && _id <= allModifiers.Count) // grab a specific card
+        {
+            if (!ownedModifiers.Contains(allModifiers[_id]) || ownedModifiers.Contains(allModifiers[_id]) && _repeatOkay)
+                cardmodToReturn = allModifiers[_id];
+        }
+
+        if (cardmodToReturn == null)
+        {
+            List<CardModifierBase> possibleCardmods = new List<CardModifierBase>();
+            for (int i = 0; i < allModifiers.Count; i++)
+            {
+                if (allModifiers[i].alignment == _alignment)
+                {
+                    if (!ownedModifiers.Contains(allModifiers[i]) || ownedModifiers.Contains(allModifiers[i]) && _repeatOkay)
+                        possibleCardmods.Add(allModifiers[i]);
+                }
+            }
+            cardmodToReturn = possibleCardmods[UnityEngine.Random.Range(0, possibleCardmods.Count + 1)];
+        }
+
         return null;
     }
 }
