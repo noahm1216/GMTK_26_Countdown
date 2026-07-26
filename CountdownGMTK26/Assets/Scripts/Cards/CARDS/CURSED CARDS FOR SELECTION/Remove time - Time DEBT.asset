@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e6a3b5ed4c939c4b9c80a85727dcc33, type: 3}
-  m_Name: Increase Drain - Pace x.4
+  m_Name: Remove time - Time DEBT
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardName: Pace
-  description: Increase Drain +0.4
+  cardName: TIME DEBT
+  description: -20 Seconds
   artwork: {fileID: 1708765454, guid: 6b723b27fb25c1149b30ff2f04f79974, type: 3}
-  effect: 4
+  effect: 1
   alignment: 1
-  value: 0.4
-  textColor: {r: 0.45289668, g: 0, b: 0.9137255, a: 1}
-  removeAfterPlay: 0
+  value: 20
+  textColor: {r: 0.74509805, g: 0, b: 0, a: 1}
+  removeAfterPlay: 1

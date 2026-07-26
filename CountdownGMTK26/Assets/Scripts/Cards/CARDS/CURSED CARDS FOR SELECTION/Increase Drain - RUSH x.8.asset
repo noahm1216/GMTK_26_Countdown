@@ -16,7 +16,7 @@ MonoBehaviour:
   description: Increase Drain +0.8
   artwork: {fileID: 1708765454, guid: 6b723b27fb25c1149b30ff2f04f79974, type: 3}
   effect: 4
-  alignment: 0
+  alignment: 1
   value: 0.8
   textColor: {r: 0.45289668, g: 0, b: 0.9137255, a: 1}
   removeAfterPlay: 1
