@@ -11,9 +11,10 @@ public class CMod_Opposite : CardModifierBase
                 if (_cardData.effect == CardEffectType.AddTime) // if condition is met
                 { timesApplied++; return _cardData.value * -1f; } // return value
 
-                else if (_cardData.effect == CardEffectType.RemoveTime) ;
-                { timesApplied++; return _cardData.value * -1f; }
+                if (_cardData.effect == CardEffectType.RemoveTime)
+                { timesApplied++; return _cardData.value * -1f;}
 
+                else { return _cardData.value;}
             }
         }
         return base.OnCardSelected(_cardData, _timeCur); // otherwise call base value
