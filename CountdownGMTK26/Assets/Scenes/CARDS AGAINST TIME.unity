@@ -1162,6 +1162,10 @@ PrefabInstance:
       value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 4087146544458656765, guid: 1bca4476dd723c6428028dbbf93f4749, type: 3}
+      propertyPath: timeBetweenUpgrades
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4087146544458656765, guid: 1bca4476dd723c6428028dbbf93f4749, type: 3}
       propertyPath: drainIncreaseInterval
       value: 15
       objectReference: {fileID: 0}
@@ -1587,6 +1591,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 319662911629103753, guid: 5e1091ad77a092d4aa298f0358e4418e, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 2077400332}
     - target: {fileID: 319662911629103753, guid: 5e1091ad77a092d4aa298f0358e4418e, type: 3}
       propertyPath: allModifiers.Array.size
       value: 8

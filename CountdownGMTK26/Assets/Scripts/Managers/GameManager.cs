@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     private TMPAnimator titleTMPAnimator;
     private bool animateTitleText;
 
-    [SerializeField] private GraphicRaycaster gameplayCanvasRaycaster;
+    [SerializeField] public GraphicRaycaster gameplayCanvasRaycaster;
     
     public bool GameActive { get; private set; }
 
@@ -208,7 +208,7 @@ public class GameManager : MonoBehaviour
     {
         if (!modifierManager || !deck) { Debug.LogWarning("CANNOT GRAB UPGRADE OPTIONS"); return; }
 
-        //gameplayCanvasRaycaster.blockingMask = 0;
+        gameplayCanvasRaycaster.enabled = false;
 
         lastAlignmentUpgradeCard = CycleAlignment(lastAlignmentUpgradeCard); // cycle the card/mod types we'll see
         lastAlignmentUpgradeMod = CycleAlignment(lastAlignmentUpgradeMod);

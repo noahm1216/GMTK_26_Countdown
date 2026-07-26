@@ -5,6 +5,8 @@ using UnityEngine;
 public class ModifierManager : MonoBehaviour
 {
     public static ModifierManager Instance { get; private set; }
+    
+    public GameManager gameManager;
 
     public List<CardModifierBase> allModifiers = new List<CardModifierBase>();
     public List<CardModifierBase> ownedModifiers = new List<CardModifierBase>();
@@ -38,6 +40,7 @@ public class ModifierManager : MonoBehaviour
 
     public void AddModifierToOwned(CardModifierBase _mod)
     {
+        gameManager.gameplayCanvasRaycaster.enabled = true;
         ownedModifiers.Add(_mod);
         // DO SOMETHING VISUAL?
     }
