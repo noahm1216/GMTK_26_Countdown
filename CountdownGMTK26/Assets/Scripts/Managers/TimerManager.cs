@@ -5,6 +5,8 @@ public class TimerManager : MonoBehaviour
 {
     public static TimerManager Instance { get; private set; }
 
+    public TimerUI timerUI;
+
     [SerializeField]
     private float startingTime = 5f;
 
@@ -23,7 +25,7 @@ public class TimerManager : MonoBehaviour
 
     public event Action OnGameOver;
 
-    private float freezeTimer;
+    public float freezeTimer { get; private set; }
 
     [Header("Difficulty Scaling")]
     [SerializeField] private bool increaseDrainOverTime = true;
@@ -59,6 +61,8 @@ public class TimerManager : MonoBehaviour
         IsRunning = true;
         lastTimeUpgrade = Time.time;
         selectingUpgrade = false;
+        Debug.Log("Timer Started! try reset gradient");
+        //timerUI.ChangeColorGradient(timerUI.defaultGradient, timerUI.colorGradientShiftTime);
     }
 
     public void FreezeTimer()

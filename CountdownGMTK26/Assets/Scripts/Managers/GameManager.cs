@@ -74,6 +74,8 @@ public class GameManager : MonoBehaviour
         if (!GameActive)
             return;
 
+        CheckCardEffectAndApplyGradient(card);
+
         // One-time card
         if (card.Data.removeAfterPlay)
         {
@@ -92,6 +94,39 @@ public class GameManager : MonoBehaviour
             {
                 FinishPlayingCard(card);
             });
+    }
+
+    private void CheckCardEffectAndApplyGradient(CardInstance card)
+    {
+        if (card.Data.effect == CardEffectType.FreezeTime)
+        {
+            Debug.Log("Freeze time" + timer.freezeTimer);
+            timer.timerUI.FlashColorGradient(timer.timerUI.freezeGradient, card.Data.value);
+        }
+        if (card.Data.effect == CardEffectType.AddTime)
+        {
+            timer.timerUI.FlashColorGradient(timer.timerUI.addGradient, timer.timerUI.flashGradientHoldTime);
+        }
+        if (card.Data.effect == CardEffectType.MultiplyTime)
+        {
+            timer.timerUI.FlashColorGradient(timer.timerUI.addGradient, timer.timerUI.flashGradientHoldTime);
+        }
+        if (card.Data.effect == CardEffectType.RemoveTime)
+        {
+            timer.timerUI.FlashColorGradient(timer.timerUI.subtractGradient, timer.timerUI.flashGradientHoldTime);
+        }
+        if (card.Data.effect == CardEffectType.DivideTime)
+        {
+            timer.timerUI.FlashColorGradient(timer.timerUI.subtractGradient, timer.timerUI.flashGradientHoldTime);
+        }
+        if (card.Data.effect == CardEffectType.DecreaseDrainRate)
+        {
+            timer.timerUI.FlashColorGradient(timer.timerUI.purpleGradient, timer.timerUI.flashGradientHoldTime);
+        }
+        if (card.Data.effect == CardEffectType.IncreaseDrainRate)
+        {
+            timer.timerUI.FlashColorGradient(timer.timerUI.orangeGradient, timer.timerUI.flashGradientHoldTime);
+        }
     }
 
     private void FinishPlayingCard(CardInstance card)
