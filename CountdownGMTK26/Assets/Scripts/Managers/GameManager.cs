@@ -24,6 +24,9 @@ public class GameManager : MonoBehaviour
     [Header("Game Over UI")]
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private GameObject startPanel;
+    [SerializeField] private GameObject gameplayPanel;
+    [SerializeField] private GameObject gameplayPanel2;
+
     [SerializeField] private GameObject titleText;
     [SerializeField] private GameObject titleStartButtonText;
     
@@ -86,8 +89,14 @@ public class GameManager : MonoBehaviour
         startGameScreenTL.SetActive(false);
 
         startPanel.SetActive(false);
-        
+        gameplayPanel.SetActive(true);
+        gameplayPanel2.SetActive(true);
+
+
+
         GameActive = true;
+
+
 
         gameOverPanel.SetActive(false);
 
