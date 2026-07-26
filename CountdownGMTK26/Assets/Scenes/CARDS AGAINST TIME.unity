@@ -343,6 +343,18 @@ PrefabInstance:
       propertyPath: updateFrom
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 3734112032729161473, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
+      propertyPath: animateOnStart
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4247110229528809074, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
+      propertyPath: updateFrom
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4247110229528809074, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
+      propertyPath: animateOnStart
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4407963160583450034, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
       propertyPath: deckManager
       value: 
@@ -435,14 +447,6 @@ PrefabInstance:
       propertyPath: timer
       value: 
       objectReference: {fileID: 1085067964}
-    - target: {fileID: 7519675220118876605, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7519675220118876605, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
-      propertyPath: m_Transition
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7519675220118876605, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -989,6 +993,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cf5e30dead0dca49a7561438e9d2904, type: 3}
+--- !u!1 &1281186371 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8626274996982845075, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
+  m_PrefabInstance: {fileID: 365802643}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1467300975 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5248178481181722245, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
@@ -1789,6 +1798,10 @@ PrefabInstance:
       propertyPath: modifierManager
       value: 
       objectReference: {fileID: 621245480}
+    - target: {fileID: 1144930870227400857, guid: 02aec92e2edb4be4d9e077d67a769817, type: 3}
+      propertyPath: titleStartButtonText
+      value: 
+      objectReference: {fileID: 1281186371}
     - target: {fileID: 1144930870227400857, guid: 02aec92e2edb4be4d9e077d67a769817, type: 3}
       propertyPath: gameplayCanvasRaycaster
       value: 

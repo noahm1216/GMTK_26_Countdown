@@ -17,14 +17,18 @@ public class GameManager : MonoBehaviour
     public ScoreManager scoreManager { get; private set; }
     public ModifierManager modifierManager { get; private set; }
     public ModifierUIManager modifierUiManager { get; private set; }
+
+    [SerializeField] private GameObject startGameScreenTL;
    
 
     [Header("Game Over UI")]
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private GameObject startPanel;
     [SerializeField] private GameObject titleText;
+    [SerializeField] private GameObject titleStartButtonText;
     
     private TMPAnimator titleTMPAnimator;
+    private TMPAnimator startButtonTMPAnimator;
     private bool animateTitleText;
 
     [SerializeField] public GraphicRaycaster gameplayCanvasRaycaster;
@@ -53,6 +57,7 @@ public class GameManager : MonoBehaviour
         ShowModsAchieved();
         
         titleTMPAnimator = titleText.GetComponent<TMPAnimator>();
+        startButtonTMPAnimator = titleStartButtonText.GetComponent<TMPAnimator>();
         animateTitleText = true;
     }
     
@@ -61,6 +66,7 @@ public class GameManager : MonoBehaviour
         if (animateTitleText && titleTMPAnimator != null)
         {
             titleTMPAnimator.UpdateAnimations(Time.deltaTime);
+            startButtonTMPAnimator.UpdateAnimations(Time.deltaTime);
         }
     }
 
@@ -77,6 +83,7 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
+        startGameScreenTL.SetActive(false);
 
         startPanel.SetActive(false);
         
