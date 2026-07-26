@@ -1647,6 +1647,10 @@ PrefabInstance:
       propertyPath: 'ownedModifiers.Array.data[0]'
       value: 
       objectReference: {fileID: 8777749549214447415, guid: 78b3c000221ab884092ac10481e07f6f, type: 3}
+    - target: {fileID: 319662911629103753, guid: 5e1091ad77a092d4aa298f0358e4418e, type: 3}
+      propertyPath: 'ownedModifiers.Array.data[1]'
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7135529804873905022, guid: 5e1091ad77a092d4aa298f0358e4418e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
