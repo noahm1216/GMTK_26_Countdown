@@ -5,6 +5,8 @@ using UnityEngine;
 public class DeckManager : MonoBehaviour
 {
     public static DeckManager Instance { get; private set; }
+    
+    [SerializeField] private GameManager gameManager;
 
     public List<CardData> allCards = new List<CardData>();
 
@@ -75,6 +77,7 @@ public class DeckManager : MonoBehaviour
 
     public void AddCardToDeck(CardData _card)
     {
+        gameManager.gameplayCanvasRaycaster.enabled = true;
         drawPile.Add(new CardInstance(_card));
     }
 
