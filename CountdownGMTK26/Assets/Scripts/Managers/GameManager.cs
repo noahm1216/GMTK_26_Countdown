@@ -21,6 +21,9 @@ public class GameManager : MonoBehaviour
 
     public bool GameActive { get; private set; }
 
+    private EffectAlignment lastAlignmentUpgradeCard = EffectAlignment.Negative;
+    private EffectAlignment lastAlignmentUpgradeMod = EffectAlignment.Negative;
+
     private void Awake()
     {
         if (Instance != null && Instance != this) Destroy(this);
@@ -119,12 +122,36 @@ public class GameManager : MonoBehaviour
         modifierUiManager.UpdateModIconsList(modifierManager.ownedModifiers);
     }
 
+    public EffectAlignment CycleAlignment(EffectAlignment _oldAlignment)
+    {
+        switch (_oldAlignment)
+        {
+            case EffectAlignment.Neutral:
+                _oldAlignment = EffectAlignment.Positive;
+                break;
+            case EffectAlignment.Negative:
+                _oldAlignment = EffectAlignment.Positive;
+                break;           
+            case EffectAlignment.Positive:
+                _oldAlignment = EffectAlignment.Negative;
+                break;
+            default:
+                _oldAlignment = EffectAlignment.Positive;
+                break;
+        }
+
+        return _oldAlignment;
+    }
+
     public void GrabUpgradeOptions()
     {
         if (!modifierManager || !deck) { Debug.LogWarning("CANNOT GRAB UPGRADE OPTIONS"); return; }
 
-        CardData option1 = deck.ReturnCardFromAllCards(EffectAlignment.Positive);
-        CardModifierBase option2 = modifierManager.ReturnModiferFromAllModifiers(EffectAlignment.Positive);       
+        lastAlignmentUpgradeCard = CycleAlignment(lastAlignmentUpgradeCard); // cycle the card/mod types we'll see
+        lastAlignmentUpgradeMod = CycleAlignment(lastAlignmentUpgradeMod);
+
+        CardData option1 = deck.ReturnCardFromAllCards(lastAlignmentUpgradeCard); // grab the cards from the pool
+        CardModifierBase option2 = modifierManager.ReturnModiferFromAllModifiers(lastAlignmentUpgradeMod);       
         
         // create or populate reference to card options
         if (upgradeUI && option1) upgradeUI.UpdateCardInformation(new CardInstance(option1), this);
