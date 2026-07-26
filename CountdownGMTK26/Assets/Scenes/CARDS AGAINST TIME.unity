@@ -196,7 +196,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 73.48073
+  field of view: 68.05073
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -222,8 +222,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 254490330}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.029971508, y: -0.29578322, z: 0.037957568, w: -0.95403004}
+  m_LocalPosition: {x: -104.93, y: -5.300001, z: -60.350002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1325,7 +1325,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4087146544458656765, guid: 1bca4476dd723c6428028dbbf93f4749, type: 3}
       propertyPath: timeBetweenUpgrades
-      value: 3
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4087146544458656765, guid: 1bca4476dd723c6428028dbbf93f4749, type: 3}
       propertyPath: drainIncreaseInterval
