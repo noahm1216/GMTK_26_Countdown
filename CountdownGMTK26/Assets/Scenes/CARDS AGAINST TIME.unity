@@ -432,6 +432,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
+--- !u!1 &392864979 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4883713552411622195, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
+  m_PrefabInstance: {fileID: 365802643}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &621245480 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 319662911629103753, guid: 5e1091ad77a092d4aa298f0358e4418e, type: 3}
@@ -1131,6 +1136,10 @@ PrefabInstance:
       propertyPath: upgradeUI
       value: 
       objectReference: {fileID: 1907311361}
+    - target: {fileID: 1144930870227400857, guid: 02aec92e2edb4be4d9e077d67a769817, type: 3}
+      propertyPath: startPanel
+      value: 
+      objectReference: {fileID: 392864979}
     - target: {fileID: 1144930870227400857, guid: 02aec92e2edb4be4d9e077d67a769817, type: 3}
       propertyPath: scoreManager
       value: 

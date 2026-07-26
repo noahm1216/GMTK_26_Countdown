@@ -597,6 +597,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cd9d2514ad12824ab24c0d0821d427d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimerManager
+--- !u!1 &1099963724 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4883713552411622195, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
+  m_PrefabInstance: {fileID: 7351572340290199906}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1659262978 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5248178481181722245, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
@@ -913,6 +918,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1907311361}
     - target: {fileID: 1144930870227400857, guid: 02aec92e2edb4be4d9e077d67a769817, type: 3}
+      propertyPath: startPanel
+      value: 
+      objectReference: {fileID: 1099963724}
+    - target: {fileID: 1144930870227400857, guid: 02aec92e2edb4be4d9e077d67a769817, type: 3}
       propertyPath: scoreManager
       value: 
       objectReference: {fileID: 1799537750}
@@ -1211,6 +1220,10 @@ PrefabInstance:
       propertyPath: timer
       value: 
       objectReference: {fileID: 1085067964}
+    - target: {fileID: 7519675220118876605, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2077400332}
     - target: {fileID: 8509974815440305090, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
       propertyPath: deckManager
       value: 
