@@ -36,7 +36,8 @@ public class ScoreManager : MonoBehaviour
         if (!isCounting)
             return;
 
-        score += Time.deltaTime;
+        if (!TimerManager.Instance.selectingUpgrade)
+            score += Time.deltaTime;
 
         UpdateUI();
     }

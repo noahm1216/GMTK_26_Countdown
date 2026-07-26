@@ -17,6 +17,10 @@ public class TimerManager : MonoBehaviour
 
     public bool IsRunning { get; private set; }
 
+    public float timeBetweenUpgrades = 15;
+    private float lastTimeUpgrade;
+    public bool selectingUpgrade;
+
     public event Action OnGameOver;
 
     private float freezeTimer;
@@ -53,6 +57,18 @@ public class TimerManager : MonoBehaviour
     public void StartTimer()
     {
         IsRunning = true;
+        lastTimeUpgrade = Time.time;
+        selectingUpgrade = false;
+    }
+
+    public void FreezeTimer()
+    {
+        IsRunning = false;
+    }
+
+    public bool TimeForUpgrade()
+    {
+        return Time.time > lastTimeUpgrade + timeBetweenUpgrades;
     }
 
     void Update()
@@ -60,11 +76,13 @@ public class TimerManager : MonoBehaviour
         if (!IsRunning)
             return;
 
+        if (TimeForUpgrade()) { GameManager.Instance.GrabUpgradeOptions(); FreezeTimer(); selectingUpgrade = true; }
+
         if (freezeTimer > 0)
         {
             freezeTimer -= Time.deltaTime;
             return;
-        }
+        }        
 
         elapsedTime += Time.deltaTime;
 

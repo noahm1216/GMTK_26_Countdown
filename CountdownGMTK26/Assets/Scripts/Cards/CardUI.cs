@@ -91,12 +91,15 @@ public class CardUI : MonoBehaviour
         if (isUpgrade)
         {
             if (mod)
-            { gameManager.modifierManager.AddModifierToOwned(mod); gameManager.ShowModsAchieved(); }
+            {
+                gameManager.modifierManager.AddModifierToOwned(mod);
+                gameManager.ShowModsAchieved();
+            }
             else if (card.Data)
                 gameManager.deck.AddCardToDeck(card.Data);
 
-            gameManager.upgradeUI.ShowCanvas(false);
-            print("MOD SELECTED - RETURN TO THE GAME");
+            gameManager.upgradeUI.ShowCanvas(false); // return to playing
+            TimerManager.Instance.StartTimer();
         }
         else
             gameManager.PlayCard(card, this);
