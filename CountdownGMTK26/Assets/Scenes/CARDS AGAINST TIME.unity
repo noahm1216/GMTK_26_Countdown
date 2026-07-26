@@ -986,6 +986,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5522863439093319368, guid: e45a0476f93a08f47adbd8a71b16ada5, type: 3}
+      propertyPath: timer
+      value: 
+      objectReference: {fileID: 1085067964}
     - target: {fileID: 5850777270365770148, guid: e45a0476f93a08f47adbd8a71b16ada5, type: 3}
       propertyPath: m_Enabled
       value: 1
