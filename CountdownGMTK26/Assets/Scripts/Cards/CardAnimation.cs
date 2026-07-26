@@ -11,7 +11,10 @@ public class CardAnimation : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     [SerializeField] private float popScale = 1.15f;
 
     private Vector3 originalPosition;
-    private Vector3 originalScale;
+    private Vector3 baseScale;
+    private Vector3 restingScale = Vector3.one;
+    private bool isHovered;
+    private bool isAnimatingIn;
 
     private CanvasGroup canvasGroup;
 
@@ -24,6 +27,8 @@ public class CardAnimation : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void AnimateEnter(Vector3 startPosition)
     {
+        isAnimatingIn = true;
+        restingScale = Vector3.one;
         transform.position = startPosition;
         StartCoroutine(EnterAnimation());
     }
@@ -82,7 +87,7 @@ public class CardAnimation : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             transform.localScale =
                 Vector3.Lerp(
                     Vector3.zero,
-                    Vector3.one * popScale,
+                    restingScale,
                     progress);
 
 
@@ -93,7 +98,8 @@ public class CardAnimation : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         }
 
 
-        transform.localScale = Vector3.one;
+        transform.localScale = restingScale;
+        isAnimatingIn = false;
     }
 
 
@@ -139,16 +145,44 @@ public class CardAnimation : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        if (isHovered || isAnimatingIn)
+        {
+            return;
+        }
+
+        isHovered = true;
         originalPosition = transform.position;
-        originalScale = transform.localScale;
+        baseScale = restingScale;
+
+        if (baseScale == Vector3.zero)
+        {
+            baseScale = Vector3.one;
+        }
+
         transform.position += Vector3.up * 20;
-        transform.localScale = originalScale * 1.2f;
+        transform.localScale = baseScale * 1.2f;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        ReturnToOriginalScale();
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        ReturnToOriginalScale();
+    }
+
+    private void ReturnToOriginalScale()
+    {
+        if (!isHovered)
+        {
+            return;
+        }
+
+        isHovered = false;
         transform.position = originalPosition;
-        transform.localScale = originalScale;
+        transform.localScale = baseScale;
     }
 
 }
