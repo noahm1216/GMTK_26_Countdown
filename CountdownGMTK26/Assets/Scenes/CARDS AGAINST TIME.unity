@@ -1155,6 +1155,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4087146544458656765, guid: 1bca4476dd723c6428028dbbf93f4749, type: 3}
+      propertyPath: startingTime
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4087146544458656765, guid: 1bca4476dd723c6428028dbbf93f4749, type: 3}
       propertyPath: drainIncreaseAmount
       value: 0.25
       objectReference: {fileID: 0}
@@ -1180,8 +1184,72 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 233383232027903537, guid: 465bec84e3db6be45a619d144740754f, type: 3}
+      propertyPath: allCards.Array.size
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 233383232027903537, guid: 465bec84e3db6be45a619d144740754f, type: 3}
+      propertyPath: 'allCards.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: e2678caac65a908419cd75e706b46f02, type: 2}
+    - target: {fileID: 233383232027903537, guid: 465bec84e3db6be45a619d144740754f, type: 3}
+      propertyPath: 'allCards.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 8fa53181831d8f8489f791cd9aa768d4, type: 2}
+    - target: {fileID: 233383232027903537, guid: 465bec84e3db6be45a619d144740754f, type: 3}
+      propertyPath: 'allCards.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: f34dceae91fda6843b37c6d7f93d9234, type: 2}
+    - target: {fileID: 233383232027903537, guid: 465bec84e3db6be45a619d144740754f, type: 3}
+      propertyPath: 'allCards.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 197dcda2cbf36f5409b41bb02ed313f0, type: 2}
+    - target: {fileID: 233383232027903537, guid: 465bec84e3db6be45a619d144740754f, type: 3}
+      propertyPath: 'allCards.Array.data[4]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 494a21cf0ff9bab419524a9e32d9bc95, type: 2}
+    - target: {fileID: 233383232027903537, guid: 465bec84e3db6be45a619d144740754f, type: 3}
+      propertyPath: 'allCards.Array.data[5]'
+      value: 
+      objectReference: {fileID: 11400000, guid: b55759f1dae32fc4ca203cfb98db7e8a, type: 2}
+    - target: {fileID: 233383232027903537, guid: 465bec84e3db6be45a619d144740754f, type: 3}
+      propertyPath: 'allCards.Array.data[6]'
+      value: 
+      objectReference: {fileID: 11400000, guid: b55759f1dae32fc4ca203cfb98db7e8a, type: 2}
+    - target: {fileID: 233383232027903537, guid: 465bec84e3db6be45a619d144740754f, type: 3}
+      propertyPath: 'allCards.Array.data[7]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 45427f950e1f28e46af010acf34c9bf2, type: 2}
+    - target: {fileID: 233383232027903537, guid: 465bec84e3db6be45a619d144740754f, type: 3}
+      propertyPath: 'allCards.Array.data[8]'
+      value: 
+      objectReference: {fileID: 11400000, guid: d6528b843b051754fb1f05457e00d61d, type: 2}
+    - target: {fileID: 233383232027903537, guid: 465bec84e3db6be45a619d144740754f, type: 3}
+      propertyPath: 'allCards.Array.data[9]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 494a21cf0ff9bab419524a9e32d9bc95, type: 2}
+    - target: {fileID: 233383232027903537, guid: 465bec84e3db6be45a619d144740754f, type: 3}
+      propertyPath: 'allCards.Array.data[10]'
+      value: 
+      objectReference: {fileID: 11400000, guid: b7cf939f3e6d3ed44a2f9a473ef5c98f, type: 2}
+    - target: {fileID: 233383232027903537, guid: 465bec84e3db6be45a619d144740754f, type: 3}
+      propertyPath: 'allCards.Array.data[11]'
+      value: 
+      objectReference: {fileID: 11400000, guid: fdd73651ee511cb43986ceaf4c9ce9e4, type: 2}
+    - target: {fileID: 233383232027903537, guid: 465bec84e3db6be45a619d144740754f, type: 3}
+      propertyPath: 'allCards.Array.data[12]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 9bec415d746d05242b45c9c11fb85ee1, type: 2}
+    - target: {fileID: 233383232027903537, guid: 465bec84e3db6be45a619d144740754f, type: 3}
+      propertyPath: 'allCards.Array.data[13]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 9868b597c2b3a024f998db48c41d55ac, type: 2}
+    - target: {fileID: 233383232027903537, guid: 465bec84e3db6be45a619d144740754f, type: 3}
+      propertyPath: 'allCards.Array.data[14]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 557db28a605c2fa4ea7f0d8459385f5a, type: 2}
+    - target: {fileID: 233383232027903537, guid: 465bec84e3db6be45a619d144740754f, type: 3}
       propertyPath: startingDeck.Array.size
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 233383232027903537, guid: 465bec84e3db6be45a619d144740754f, type: 3}
       propertyPath: 'startingDeck.Array.data[4]'
@@ -1198,11 +1266,11 @@ PrefabInstance:
     - target: {fileID: 233383232027903537, guid: 465bec84e3db6be45a619d144740754f, type: 3}
       propertyPath: 'startingDeck.Array.data[7]'
       value: 
-      objectReference: {fileID: 11400000, guid: 8fa53181831d8f8489f791cd9aa768d4, type: 2}
+      objectReference: {fileID: 11400000, guid: 3adbf5c1981936b4f99e89213ac716e4, type: 2}
     - target: {fileID: 233383232027903537, guid: 465bec84e3db6be45a619d144740754f, type: 3}
       propertyPath: 'startingDeck.Array.data[8]'
       value: 
-      objectReference: {fileID: 11400000, guid: 3adbf5c1981936b4f99e89213ac716e4, type: 2}
+      objectReference: {fileID: 11400000, guid: 4e03bb00ef07e144d89f04048fef31a2, type: 2}
     - target: {fileID: 233383232027903537, guid: 465bec84e3db6be45a619d144740754f, type: 3}
       propertyPath: 'startingDeck.Array.data[9]'
       value: 
@@ -1214,7 +1282,7 @@ PrefabInstance:
     - target: {fileID: 233383232027903537, guid: 465bec84e3db6be45a619d144740754f, type: 3}
       propertyPath: 'startingDeck.Array.data[11]'
       value: 
-      objectReference: {fileID: 11400000, guid: 4e03bb00ef07e144d89f04048fef31a2, type: 2}
+      objectReference: {fileID: 11400000, guid: a9a2efb0475b87e4f95c75024da0f999, type: 2}
     - target: {fileID: 233383232027903537, guid: 465bec84e3db6be45a619d144740754f, type: 3}
       propertyPath: 'startingDeck.Array.data[12]'
       value: 

@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b790410078f4dc47a8de76205cc2494, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CMod_Empty
-  modName: Empty
-  description: 
+  modName: Runes of Runes
+  description: Allows player to receive runes
   artwork: {fileID: 0}
   timesUsableInGame: -1
   alignment: 0
