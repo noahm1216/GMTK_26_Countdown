@@ -1,5 +1,9 @@
+using TMPEffects.Components;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,7 +22,13 @@ public class GameManager : MonoBehaviour
     [Header("Game Over UI")]
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private GameObject startPanel;
+    [SerializeField] private GameObject titleText;
+    
+    private TMPAnimator titleTMPAnimator;
+    private bool animateTitleText;
 
+    [SerializeField] private GraphicRaycaster gameplayCanvasRaycaster;
+    
     public bool GameActive { get; private set; }
 
     private EffectAlignment lastAlignmentUpgradeCard = EffectAlignment.Negative;
@@ -41,6 +51,17 @@ public class GameManager : MonoBehaviour
         
         startPanel.SetActive(true);
         ShowModsAchieved();
+        
+        titleTMPAnimator = titleText.GetComponent<TMPAnimator>();
+        animateTitleText = true;
+    }
+    
+    private void Update()
+    {
+        if (animateTitleText && titleTMPAnimator != null)
+        {
+            titleTMPAnimator.UpdateAnimations(Time.deltaTime);
+        }
     }
 
     // private void Start()
@@ -70,6 +91,8 @@ public class GameManager : MonoBehaviour
         scoreManager.StartScore();
 
         timer.StartTimer();
+        
+        animateTitleText = false;
     }
 
     public void PlayCard(CardInstance card, CardUI ui)
@@ -184,6 +207,8 @@ public class GameManager : MonoBehaviour
     public void GrabUpgradeOptions()
     {
         if (!modifierManager || !deck) { Debug.LogWarning("CANNOT GRAB UPGRADE OPTIONS"); return; }
+
+        //gameplayCanvasRaycaster.blockingMask = 0;
 
         lastAlignmentUpgradeCard = CycleAlignment(lastAlignmentUpgradeCard); // cycle the card/mod types we'll see
         lastAlignmentUpgradeMod = CycleAlignment(lastAlignmentUpgradeMod);

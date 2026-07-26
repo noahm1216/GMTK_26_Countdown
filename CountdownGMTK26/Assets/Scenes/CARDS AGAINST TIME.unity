@@ -319,6 +319,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 503306221233430642, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1060083403432811674, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -326,6 +330,18 @@ PrefabInstance:
     - target: {fileID: 2472173907555537841, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
       propertyPath: m_Name
       value: Canvas_Gameplay
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897702834975168052, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3734112032729161473, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3734112032729161473, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
+      propertyPath: updateFrom
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4407963160583450034, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
       propertyPath: deckManager
@@ -419,6 +435,14 @@ PrefabInstance:
       propertyPath: timer
       value: 
       objectReference: {fileID: 1085067964}
+    - target: {fileID: 7519675220118876605, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519675220118876605, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
+      propertyPath: m_Transition
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7519675220118876605, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -662,6 +686,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &906686254 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9063999127106820339, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
+  m_PrefabInstance: {fileID: 365802643}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &997006979
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -910,6 +939,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &1583925311 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8461978631588832411, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
+  m_PrefabInstance: {fileID: 365802643}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GraphicRaycaster
 --- !u!1 &1617990688 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6677091066011683396, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
@@ -1657,6 +1697,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 738866480}
     - target: {fileID: 1144930870227400857, guid: 02aec92e2edb4be4d9e077d67a769817, type: 3}
+      propertyPath: titleText
+      value: 
+      objectReference: {fileID: 906686254}
+    - target: {fileID: 1144930870227400857, guid: 02aec92e2edb4be4d9e077d67a769817, type: 3}
       propertyPath: upgradeUI
       value: 
       objectReference: {fileID: 1907311361}
@@ -1676,6 +1720,10 @@ PrefabInstance:
       propertyPath: modifierManager
       value: 
       objectReference: {fileID: 621245480}
+    - target: {fileID: 1144930870227400857, guid: 02aec92e2edb4be4d9e077d67a769817, type: 3}
+      propertyPath: gameplayCanvasRaycaster
+      value: 
+      objectReference: {fileID: 1583925311}
     - target: {fileID: 2293367515488546616, guid: 02aec92e2edb4be4d9e077d67a769817, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
