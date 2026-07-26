@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   cardName: Speed Up
   description: Increase Drain +0.2
-  artwork: {fileID: 1708765454, guid: 6b723b27fb25c1149b30ff2f04f79974, type: 3}
+  artwork: {fileID: 21300000, guid: b05d94e006de6b9459b7135472315348, type: 3}
   effect: 4
   alignment: 1
   value: 0.2

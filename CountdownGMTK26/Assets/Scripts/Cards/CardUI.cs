@@ -8,7 +8,9 @@ public class CardUI : MonoBehaviour
 
     [Header("UI")]
     [SerializeField] private TMP_Text cardNameText;
+    [SerializeField] private TMP_Text cardNameTextOutline;
     [SerializeField] private TMP_Text descriptionText;
+    [SerializeField] private TMP_Text descriptionTextOutline;
     [SerializeField] private TMP_Text valueText;
     [SerializeField] private Image artworkImage;
     [SerializeField] private Button button;
@@ -53,6 +55,7 @@ public class CardUI : MonoBehaviour
         cardNameText.text = card.Data.cardName;
         cardNameText.color = card.Data.textColor;
         descriptionText.text = card.Data.description;
+        descriptionTextOutline.text = card.Data.description;
         valueText.text = card.Data.value.ToString();
 
         if (artworkImage != null)
@@ -75,6 +78,7 @@ public class CardUI : MonoBehaviour
         gameManager = gm;
 
         cardNameText.text = cardMod.modName;
+        cardNameTextOutline.text = cardMod.modName;
         cardNameText.color = cardMod.textColor;
         descriptionText.text = cardMod.description;
         //valueText.text = cardMod.value.ToString();
