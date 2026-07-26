@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &89767897 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4588059785650695204, guid: 0b01ab582c12bce42bb8771adec0eae6, type: 3}
+  m_PrefabInstance: {fileID: 645548965}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &138187206 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 233383232027903537, guid: 465bec84e3db6be45a619d144740754f, type: 3}
@@ -217,8 +222,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 254490330}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.029806403, y: -0.1739024, z: -0.10878647, w: -0.9782817}
-  m_LocalPosition: {x: 16.2, y: 57.1, z: 113}
+  m_LocalRotation: {x: 0.029971508, y: -0.29578322, z: 0.037957568, w: -0.95403004}
+  m_LocalPosition: {x: -104.93, y: -5.300001, z: -60.350002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -443,6 +448,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2077400332}
+    - target: {fileID: 5876489420874068227, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
+      propertyPath: m_Color.a
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5876489420874068227, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
+      propertyPath: m_Color.b
+      value: 0.41509432
+      objectReference: {fileID: 0}
+    - target: {fileID: 5876489420874068227, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
+      propertyPath: m_Color.g
+      value: 0.2098572
+      objectReference: {fileID: 0}
+    - target: {fileID: 5876489420874068227, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
+      propertyPath: m_Color.r
+      value: 0.18992524
+      objectReference: {fileID: 0}
     - target: {fileID: 5907423674233665131, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
       propertyPath: timer
       value: 
@@ -1798,6 +1819,10 @@ PrefabInstance:
       propertyPath: modifierManager
       value: 
       objectReference: {fileID: 621245480}
+    - target: {fileID: 1144930870227400857, guid: 02aec92e2edb4be4d9e077d67a769817, type: 3}
+      propertyPath: startGameScreenTL
+      value: 
+      objectReference: {fileID: 89767897}
     - target: {fileID: 1144930870227400857, guid: 02aec92e2edb4be4d9e077d67a769817, type: 3}
       propertyPath: titleStartButtonText
       value: 
