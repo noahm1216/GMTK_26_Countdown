@@ -1318,7 +1318,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 319662911629103753, guid: 5e1091ad77a092d4aa298f0358e4418e, type: 3}
       propertyPath: allModifiers.Array.size
-      value: 4
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 319662911629103753, guid: 5e1091ad77a092d4aa298f0358e4418e, type: 3}
+      propertyPath: ownedModifiers.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 319662911629103753, guid: 5e1091ad77a092d4aa298f0358e4418e, type: 3}
       propertyPath: 'allModifiers.Array.data[2]'
@@ -1328,6 +1332,14 @@ PrefabInstance:
       propertyPath: 'allModifiers.Array.data[3]'
       value: 
       objectReference: {fileID: 264405002429619748, guid: 791b07e7a8eabac4f86dcef25cdb2d55, type: 3}
+    - target: {fileID: 319662911629103753, guid: 5e1091ad77a092d4aa298f0358e4418e, type: 3}
+      propertyPath: 'allModifiers.Array.data[4]'
+      value: 
+      objectReference: {fileID: 7674159089128637507, guid: a97bf6cfc3ed4624fbfa154cf781fafe, type: 3}
+    - target: {fileID: 319662911629103753, guid: 5e1091ad77a092d4aa298f0358e4418e, type: 3}
+      propertyPath: 'ownedModifiers.Array.data[0]'
+      value: 
+      objectReference: {fileID: 4770411076730233072, guid: 5cb1a43a0f92c1f428e4cc0c0aece6ce, type: 3}
     - target: {fileID: 7135529804873905022, guid: 5e1091ad77a092d4aa298f0358e4418e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
