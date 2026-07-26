@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Game Over UI")]
     [SerializeField] private GameObject gameOverPanel;
+    [SerializeField] private GameObject startPanel;
 
     public bool GameActive { get; private set; }
 
@@ -36,7 +37,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        StartGame();
+        startPanel.SetActive(true);
     }
 
     private void OnDestroy()
@@ -44,8 +45,11 @@ public class GameManager : MonoBehaviour
         timer.OnGameOver -= GameOver;
     }
 
-    private void StartGame()
+    public void StartGame()
     {
+
+        startPanel.SetActive(false);
+        
         GameActive = true;
 
         gameOverPanel.SetActive(false);
@@ -55,6 +59,8 @@ public class GameManager : MonoBehaviour
         handUI.Refresh();
 
         scoreManager.StartScore();
+
+        timer.StartTimer();
     }
 
     public void PlayCard(CardInstance card, CardUI ui)

@@ -45,9 +45,14 @@ public class TimerManager : MonoBehaviour
         CurrentTime = startingTime;
         PeakTime = startingTime;
 
-        IsRunning = true;
+        IsRunning = false;
         elapsedTime = 0;
         nextDrainIncrease = drainIncreaseInterval;
+    }
+
+    public void StartTimer()
+    {
+        IsRunning = true;
     }
 
     void Update()
