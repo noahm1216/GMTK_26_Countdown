@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public UpgradeUI upgradeUI { get; private set; }
     public ScoreManager scoreManager { get; private set; }
     public ModifierManager modifierManager { get; private set; }
+    public ModifierUIManager modifierUiManager { get; private set; }
    
 
     [Header("Game Over UI")]
@@ -30,7 +31,8 @@ public class GameManager : MonoBehaviour
         handUI = HandUI.Instance;
         upgradeUI = UpgradeUI.Instance;
         scoreManager = ScoreManager.Instance;
-        modifierManager = ModifierManager.Instance;        
+        modifierManager = ModifierManager.Instance;
+        modifierUiManager = ModifierUIManager.Instance;
 
         timer.OnGameOver += GameOver;
     }
@@ -38,6 +40,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         startPanel.SetActive(true);
+        ShowModsAchieved();
     }
 
     private void OnDestroy()
@@ -109,9 +112,11 @@ public class GameManager : MonoBehaviour
         handUI.Refresh();
     }
 
-    private void Update()
-    { 
-        if (Input.GetKeyDown(KeyCode.Alpha0))  GrabUpgradeOptions(); 
+    public void ShowModsAchieved()
+    {
+        if (!modifierUiManager) { Debug.LogError("Missing Mod-UI-Manager"); return; }
+
+        modifierUiManager.UpdateModIconsList(modifierManager.ownedModifiers);
     }
 
     public void GrabUpgradeOptions()
@@ -119,9 +124,7 @@ public class GameManager : MonoBehaviour
         if (!modifierManager || !deck) { Debug.LogWarning("CANNOT GRAB UPGRADE OPTIONS"); return; }
 
         CardData option1 = deck.ReturnCardFromAllCards(EffectAlignment.Positive);
-        CardModifierBase option2 = modifierManager.ReturnModiferFromAllModifiers(EffectAlignment.Positive);
-        if (option2 != null) print($"GOT MODIFIER: {option2.modName} - {option2.description}");
-
+        CardModifierBase option2 = modifierManager.ReturnModiferFromAllModifiers(EffectAlignment.Positive);       
         
         // create or populate reference to card options
         if (upgradeUI && option1) upgradeUI.UpdateCardInformation(new CardInstance(option1), this);

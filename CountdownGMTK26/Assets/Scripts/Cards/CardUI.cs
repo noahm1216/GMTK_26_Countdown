@@ -91,7 +91,7 @@ public class CardUI : MonoBehaviour
         if (isUpgrade)
         {
             if (mod)
-                gameManager.modifierManager.AddModifierToOwned(mod);
+            { gameManager.modifierManager.AddModifierToOwned(mod); gameManager.ShowModsAchieved(); }
             else if (card.Data)
                 gameManager.deck.AddCardToDeck(card.Data);
 
