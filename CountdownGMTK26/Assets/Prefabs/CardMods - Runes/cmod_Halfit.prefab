@@ -49,5 +49,5 @@ MonoBehaviour:
   artwork: {fileID: -1330255709, guid: 6b723b27fb25c1149b30ff2f04f79974, type: 3}
   timesUsableInGame: 5
   alignment: 1
-  textColor: {r: 1, g: 1, b: 1, a: 1}
+  textColor: {r: 1, g: 0, b: 1, a: 1}
   removeAfterPlay: 0
