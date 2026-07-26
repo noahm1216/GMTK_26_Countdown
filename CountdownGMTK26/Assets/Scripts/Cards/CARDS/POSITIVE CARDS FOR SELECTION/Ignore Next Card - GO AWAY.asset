@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e6a3b5ed4c939c4b9c80a85727dcc33, type: 3}
-  m_Name: Ignore Next Card
+  m_Name: Ignore Next Card - GO AWAY
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardName: 
-  description: Ignore next 1 card effect
+  cardName: GO AWAY
+  description: Ignore next 3 card effect
   artwork: {fileID: 1708765454, guid: 6b723b27fb25c1149b30ff2f04f79974, type: 3}
   effect: 8
   alignment: 2
-  value: 1
+  value: 3
   textColor: {r: 0.2735849, g: 0.2735849, b: 0.2735849, a: 1}
-  removeAfterPlay: 0
+  removeAfterPlay: 1
