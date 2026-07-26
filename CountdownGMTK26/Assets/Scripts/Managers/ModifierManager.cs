@@ -10,7 +10,7 @@ public class ModifierManager : MonoBehaviour
     public List<CardModifierBase> ownedModifiers = new List<CardModifierBase>();
 
 
-    public void Awake()
+    public void Start()
     {
         if (Instance != null && Instance != this) Destroy(this);
         else Instance = this;

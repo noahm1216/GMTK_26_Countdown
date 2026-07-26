@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     private EffectAlignment lastAlignmentUpgradeCard = EffectAlignment.Negative;
     private EffectAlignment lastAlignmentUpgradeMod = EffectAlignment.Negative;
 
-    private void Awake()
+    private void Start()
     {
         if (Instance != null && Instance != this) Destroy(this);
         else Instance = this;
@@ -38,13 +38,16 @@ public class GameManager : MonoBehaviour
         modifierUiManager = ModifierUIManager.Instance;
 
         timer.OnGameOver += GameOver;
-    }
-
-    private void Start()
-    {
+        
         startPanel.SetActive(true);
         ShowModsAchieved();
     }
+
+    // private void Start()
+    // {
+    //     startPanel.SetActive(true);
+    //     ShowModsAchieved();
+    // }
 
     private void OnDestroy()
     {

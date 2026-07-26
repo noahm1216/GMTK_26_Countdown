@@ -9,14 +9,17 @@ public class ModifierUIManager : MonoBehaviour
     public ModUI modIconTemplate;
     private Transform modIconHolder;
 
-    public void Awake()
-    {
-        if (Instance != null && Instance != this) Destroy(this);
-        else Instance = this;
-    }
+    // public void Awake()
+    // {
+    //     if (Instance != null && Instance != this) Destroy(this);
+    //     else Instance = this;
+    // }
 
     public void Start()
     {
+        if (Instance != null && Instance != this) Destroy(this);
+        else Instance = this;
+        
         if (modIconTemplate) modIconHolder = modIconTemplate.transform.parent;
     }
 
