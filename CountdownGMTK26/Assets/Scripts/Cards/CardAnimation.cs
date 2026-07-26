@@ -141,8 +141,8 @@ public class CardAnimation : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     {
         originalPosition = transform.position;
         originalScale = transform.localScale;
-        transform.position += Vector3.up * 10;
-        transform.localScale = originalScale * 1.1f;
+        transform.position += Vector3.up * 20;
+        transform.localScale = originalScale * 1.2f;
     }
 
     public void OnPointerExit(PointerEventData eventData)
