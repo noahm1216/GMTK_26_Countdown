@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CMod_Halfit
   modName: Half it
   description: Half the value in the next 5 cards
-  artwork: {fileID: -1330255709, guid: 6b723b27fb25c1149b30ff2f04f79974, type: 3}
+  artwork: {fileID: 21300000, guid: 2e35fe093c15b5b4a8930a1d86dc4e83, type: 3}
   timesUsableInGame: 5
   alignment: 1
   textColor: {r: 1, g: 0, b: 1, a: 1}

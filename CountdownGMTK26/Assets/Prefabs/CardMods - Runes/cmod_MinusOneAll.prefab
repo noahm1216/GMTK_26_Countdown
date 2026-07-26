@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CMod_MinusOneAll
   modName: Minus 1
   description: -1 from all played values
-  artwork: {fileID: 0}
+  artwork: {fileID: 21300000, guid: 8df7cb38f4705e44ea49c6c167315d3a, type: 3}
   timesUsableInGame: -1
   alignment: 0
   textColor: {r: 0, g: 0, b: 0, a: 1}

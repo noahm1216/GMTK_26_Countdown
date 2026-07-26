@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CMod_DivideHalved
   modName: Cut For Time
   description: Take half of any Time-Division.
-  artwork: {fileID: -1003157482, guid: 6b723b27fb25c1149b30ff2f04f79974, type: 3}
+  artwork: {fileID: 21300000, guid: f49213bc05c13684e900fe4d0b71d657, type: 3}
   timesUsableInGame: -1
   alignment: 0
   textColor: {r: 0.74509805, g: 0, b: 0, a: 1}
