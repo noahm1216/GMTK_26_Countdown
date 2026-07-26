@@ -2653,7 +2653,7 @@ MonoBehaviour:
   handParent: {fileID: 6931960881523489948}
   drawPilePoint: {fileID: 1862239748978597469}
   discardPilePoint: {fileID: 3316891840110714277}
-  cardSpacing: 80
+  cardSpacing: 95
   animationSpeed: 10
   maxRotation: -8
 --- !u!114 &93880835711285655

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   cardName: Time Save
   description: +8 Seconds
-  artwork: {fileID: 1708765454, guid: 6b723b27fb25c1149b30ff2f04f79974, type: 3}
+  artwork: {fileID: 21300000, guid: 37de7f88f5dc0924cab905ca862ce901, type: 3}
   effect: 0
   alignment: 0
   value: 8

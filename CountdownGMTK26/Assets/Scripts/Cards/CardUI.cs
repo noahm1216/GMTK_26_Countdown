@@ -81,6 +81,7 @@ public class CardUI : MonoBehaviour
         cardNameTextOutline.text = cardMod.modName;
         cardNameText.color = cardMod.textColor;
         descriptionText.text = cardMod.description;
+        descriptionTextOutline.text = cardMod.description;
         //valueText.text = cardMod.value.ToString();
 
         if (artworkImage != null)

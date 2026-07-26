@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   cardName: Eh...
   description: Ignore next 1 card effect
-  artwork: {fileID: 1708765454, guid: 6b723b27fb25c1149b30ff2f04f79974, type: 3}
+  artwork: {fileID: 21300000, guid: 7a76ffee9a7c9514295a5f6b04810b36, type: 3}
   effect: 8
   alignment: 2
   value: 1
