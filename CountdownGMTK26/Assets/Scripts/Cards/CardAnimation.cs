@@ -14,7 +14,7 @@ public class CardAnimation : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     private Vector3 baseScale;
     private Vector3 restingScale = Vector3.one;
     private bool isHovered;
-    private bool isAnimatingIn;
+    private bool suppressHoverUntilExit;
 
     private CanvasGroup canvasGroup;
 
@@ -22,13 +22,13 @@ public class CardAnimation : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     private void Awake()
     {
         canvasGroup = GetComponent<CanvasGroup>();
+        baseScale = transform.localScale;
+        restingScale = baseScale;
     }
 
 
     public void AnimateEnter(Vector3 startPosition)
     {
-        isAnimatingIn = true;
-        restingScale = Vector3.one;
         transform.position = startPosition;
         StartCoroutine(EnterAnimation());
     }
@@ -99,7 +99,6 @@ public class CardAnimation : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
 
         transform.localScale = restingScale;
-        isAnimatingIn = false;
     }
 
 
@@ -145,44 +144,43 @@ public class CardAnimation : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (isHovered || isAnimatingIn)
-        {
+        if (isHovered || suppressHoverUntilExit)
             return;
-        }
 
         isHovered = true;
+
         originalPosition = transform.position;
-        baseScale = restingScale;
-
-        if (baseScale == Vector3.zero)
-        {
-            baseScale = Vector3.one;
-        }
-
-        transform.position += Vector3.up * 20;
+        transform.position += Vector3.up * 20f;
         transform.localScale = baseScale * 1.2f;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        ReturnToOriginalScale();
+        suppressHoverUntilExit = false;
+        ResetHoverState();
     }
 
-    public void OnPointerUp(PointerEventData eventData)
+    public void OnPointerDown(PointerEventData eventData)
     {
-        ReturnToOriginalScale();
+        suppressHoverUntilExit = true;
+        ResetHoverState();
     }
 
-    private void ReturnToOriginalScale()
+    public void ResetHoverState()
     {
-        if (!isHovered)
+        if (isHovered)
         {
-            return;
+            transform.position = originalPosition;
+            isHovered = false;
         }
 
-        isHovered = false;
-        transform.position = originalPosition;
         transform.localScale = baseScale;
+    }
+
+    private void OnDisable()
+    {
+        suppressHoverUntilExit = false;
+        ResetHoverState();
     }
 
 }

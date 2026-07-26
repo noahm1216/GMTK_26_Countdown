@@ -15,7 +15,7 @@ public class ModifierUIManager : MonoBehaviour
     //     else Instance = this;
     // }
 
-    public void Start()
+    public void Awake()
     {
         if (Instance != null && Instance != this) Destroy(this);
         else Instance = this;
