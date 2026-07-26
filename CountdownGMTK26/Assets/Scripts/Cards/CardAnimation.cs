@@ -1,13 +1,17 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class CardAnimation : MonoBehaviour
+public class CardAnimation : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [Header("Animation")]
     [SerializeField] private float enterSpeed = 8f;
     [SerializeField] private float exitSpeed = 8f;
 
     [SerializeField] private float popScale = 1.15f;
+
+    private Vector3 originalPosition;
+    private Vector3 originalScale;
 
     private CanvasGroup canvasGroup;
 
@@ -132,4 +136,19 @@ public class CardAnimation : MonoBehaviour
         onFinished?.Invoke();
         Destroy(gameObject);
     }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        originalPosition = transform.position;
+        originalScale = transform.localScale;
+        transform.position += Vector3.up * 10;
+        transform.localScale = originalScale * 1.1f;
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        transform.position = originalPosition;
+        transform.localScale = originalScale;
+    }
+
 }
