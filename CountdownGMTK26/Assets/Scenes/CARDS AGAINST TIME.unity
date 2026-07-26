@@ -1401,7 +1401,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 319662911629103753, guid: 5e1091ad77a092d4aa298f0358e4418e, type: 3}
       propertyPath: allModifiers.Array.size
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 319662911629103753, guid: 5e1091ad77a092d4aa298f0358e4418e, type: 3}
       propertyPath: ownedModifiers.Array.size
@@ -1427,6 +1427,10 @@ PrefabInstance:
       propertyPath: 'allModifiers.Array.data[6]'
       value: 
       objectReference: {fileID: -8958487169777685952, guid: 54a5acc7d74517e4599335a234f5557d, type: 3}
+    - target: {fileID: 319662911629103753, guid: 5e1091ad77a092d4aa298f0358e4418e, type: 3}
+      propertyPath: 'allModifiers.Array.data[7]'
+      value: 
+      objectReference: {fileID: 8165655109887310705, guid: 7761cff52d64ceb42b93d5a0e9ab950f, type: 3}
     - target: {fileID: 319662911629103753, guid: 5e1091ad77a092d4aa298f0358e4418e, type: 3}
       propertyPath: 'ownedModifiers.Array.data[0]'
       value: 
