@@ -23,12 +23,12 @@ public class CardData : ScriptableObject
     [Header("Special Rules")]
     public bool removeAfterPlay;
 
-#if UNITY_EDITOR
+//#if UNITY_EDITOR
     private void OnValidate()
     {
         description = GenerateDescription();
     }
-#endif
+//#endif
 
     private string GenerateDescription()
     {
