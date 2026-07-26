@@ -75,7 +75,7 @@ public class DeckManager : MonoBehaviour
 
     public void AddCardToDeck(CardData _card)
     {
-        startingDeck.Add(_card);
+        drawPile.Add(_card);
     }
 
 
