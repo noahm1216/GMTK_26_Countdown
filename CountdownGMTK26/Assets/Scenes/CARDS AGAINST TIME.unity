@@ -191,7 +191,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 76.01685
+  field of view: 60
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -419,6 +419,14 @@ PrefabInstance:
       propertyPath: timer
       value: 
       objectReference: {fileID: 1085067964}
+    - target: {fileID: 7519675220118876605, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2077400332}
+    - target: {fileID: 7519675220118876605, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartGame
+      objectReference: {fileID: 0}
     - target: {fileID: 8509974815440305090, guid: b42f0b97023df0b4c897dd2b614f89fd, type: 3}
       propertyPath: deckManager
       value: 
@@ -710,9 +718,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4057404615936346185, guid: 0cf5e30dead0dca49a7561438e9d2904, type: 3}
+      propertyPath: AmplitudeGain
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4057404615936346185, guid: 0cf5e30dead0dca49a7561438e9d2904, type: 3}
+      propertyPath: FrequencyGain
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4635963289894213518, guid: 0cf5e30dead0dca49a7561438e9d2904, type: 3}
       propertyPath: m_Name
       value: CameraManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6665788460924520435, guid: 0cf5e30dead0dca49a7561438e9d2904, type: 3}
+      propertyPath: Lens.FieldOfView
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 7835312514601130822, guid: 0cf5e30dead0dca49a7561438e9d2904, type: 3}
       propertyPath: m_LocalPosition.x
